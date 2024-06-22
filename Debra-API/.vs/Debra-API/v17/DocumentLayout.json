@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\controllers\\adminaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\controllers\\adminaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\adminaccountdtos\\adminupdatepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\adminaccountdtos\\adminupdatepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\adminaccountdtos\\adminaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\adminaccountdtos\\adminaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\adminaccountdtos\\adminoperationresultresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\adminaccountdtos\\adminoperationresultresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\repositories\\adminaccountrepositories\\adminaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,55 +34,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\appsettings.json",
-              "RelativeDocumentMoniker": "Debra-API\\appsettings.json",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\appsettings.json",
-              "RelativeToolTip": "Debra-API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-21T19:10:53.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Program.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Program.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Program.cs",
-              "RelativeToolTip": "Debra-API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Title": "AdminOperationResultResponseDTO.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\AdminAccountDTOs\\AdminOperationResultResponseDTO.cs",
+              "RelativeDocumentMoniker": "Debra-API\\DTOs\\AdminAccountDTOs\\AdminOperationResultResponseDTO.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\AdminAccountDTOs\\AdminOperationResultResponseDTO.cs",
+              "RelativeToolTip": "Debra-API\\DTOs\\AdminAccountDTOs\\AdminOperationResultResponseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T18:42:33.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Profiles\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Profiles\\MappingProfile.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Profiles\\MappingProfile.cs",
-              "RelativeToolTip": "Debra-API\\Profiles\\MappingProfile.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAswAoAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:56:52.257Z",
+              "WhenOpened": "2024-06-22T10:32:48.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AdminAccountDTO.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\AdminAccountDTOs\\AdminAccountDTO.cs",
+              "RelativeDocumentMoniker": "Debra-API\\DTOs\\AdminAccountDTOs\\AdminAccountDTO.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\AdminAccountDTOs\\AdminAccountDTO.cs",
+              "RelativeToolTip": "Debra-API\\DTOs\\AdminAccountDTOs\\AdminAccountDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T10:32:41.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminUpdatePasswordDTO.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\AdminAccountDTOs\\AdminUpdatePasswordDTO.cs",
+              "RelativeDocumentMoniker": "Debra-API\\DTOs\\AdminAccountDTOs\\AdminUpdatePasswordDTO.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\AdminAccountDTOs\\AdminUpdatePasswordDTO.cs",
+              "RelativeToolTip": "Debra-API\\DTOs\\AdminAccountDTOs\\AdminUpdatePasswordDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T10:26:35.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AdminAccountController.cs",
               "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\AdminAccountController.cs",
               "RelativeDocumentMoniker": "Debra-API\\Controllers\\AdminAccountController.cs",
               "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\AdminAccountController.cs",
               "RelativeToolTip": "Debra-API\\Controllers\\AdminAccountController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAMwBgAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T17:53:52.569Z",
               "EditorCaption": ""
@@ -95,9 +96,10 @@
               "RelativeDocumentMoniker": "Debra-API\\Repositories\\AdminAccountRepositories\\AdminAccountRepository.cs",
               "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\AdminAccountRepositories\\AdminAccountRepository.cs",
               "RelativeToolTip": "Debra-API\\Repositories\\AdminAccountRepositories\\AdminAccountRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAZAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAnwDsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T17:43:57.934Z"
+              "WhenOpened": "2024-06-21T17:43:57.934Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

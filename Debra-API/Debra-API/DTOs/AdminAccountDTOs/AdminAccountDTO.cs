@@ -1,4 +1,4 @@
-﻿namespace Debra_API.DTO
+﻿namespace Debra_API.DTOs.AdminAccountDTOs
 {
     public class AdminAccountDTO
     {
