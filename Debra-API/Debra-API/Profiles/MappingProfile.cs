@@ -9,6 +9,8 @@ namespace Debra_API.Profiles
         {
             CreateMap<AdminAccount, AdminAccountDTO>();
             CreateMap<AdminAccountDTO, AdminAccount>();
+            CreateMap<Customer, CustomerDTO>();
+            CreateMap<CustomerDTO, Customer>();
         }
     }
 }
