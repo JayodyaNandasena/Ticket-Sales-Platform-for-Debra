@@ -20,11 +20,11 @@ namespace Debra_API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(AdminAccountDTO adminAccountDTO)
+        public ActionResult Create(CustomerDTO customerDTO)
         {
-            var model = _mapper.Map<AdminAccount>(adminAccountDTO);
+            var model = _mapper.Map<Customer>(customerDTO);
 
-            if (_customerRepository.CreateAccount(model))
+            if (_customerRepository.Add(model))
             {
                 return Ok(model);
             }
@@ -33,77 +33,104 @@ namespace Debra_API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<AdminAccountDTO>> GetAll()
+        public ActionResult<IEnumerable<CustomerDTO>> GetAll()
         {
-            var allAdminAccount = _customerRepository.GetAllAccounts();
-            return Ok(allAdminAccount);
+            var allCustomers = _customerRepository.GetAll();
+            return Ok(allCustomers);
         }
 
-        [HttpPost("ValidateLogin")]
-        public ActionResult ValidateLogin(AdminAccountDTO adminAccountDTO)
+        [HttpGet("ByMobile")]
+        public ActionResult FindByMobile([FromQuery] string mobile)
         {
-            var allAdminAccounts = _customerRepository.GetAllAccounts();
+            var customer = _customerRepository.GetByMobile(mobile);
 
-            foreach (var adminAccount in allAdminAccounts)
+            if (customer is null)
             {
-                if (adminAccountDTO.Username == adminAccount.Username &&
-                    adminAccountDTO.Password == adminAccount.Password)
+                var notFoundResponse = new CustomerOperationResultResponseDTO
                 {
-                    var validAdminAccountDTO =
-                        _mapper.Map<AdminAccountDTO>(adminAccount);
-
-                    var response = new AdminOperationResultResponseDTO
-                    {
-                        Status = "Success",
-                        Admin = validAdminAccountDTO
-                    };
-
-                    return Ok(response);
-                }
-            }
-
-            var failedResponse = new AdminOperationResultResponseDTO
-            {
-                Status = "Failed",
-                Admin = null
-            };
-            return Unauthorized(failedResponse);
-        }
-
-        [HttpPut("(username)", Name = "updatePassword")]
-        public ActionResult updatePassword(string username, AdminUpdatePasswordDTO password) 
-        {
-            AdminAccount adminAccount = _customerRepository.GetAdminAccount(username);
-            
-            if (adminAccount is null)
-            {
-                var notFoundResponse = new AdminOperationResultResponseDTO
-                {
-                    Status = "Failed",
-                    Admin = null
+                    Status = "Not Found",
+                    Customer = null
                 };
                 return NotFound(notFoundResponse);
             }
 
-            adminAccount.Password = password.NewPassword;
+            return Ok(customer);
+        }
 
-            if (_customerRepository.UpdateAccount(adminAccount))
+
+        [HttpPut]
+        public ActionResult update([FromQuery] string mobile, CustomerDTO customerDTO) 
+        {
+            Customer searchedCustomer = _customerRepository.GetByMobile(mobile);
+            
+            if (searchedCustomer is null)
             {
-                var successResponse = new AdminOperationResultResponseDTO
+                var notFoundResponse = new CustomerOperationResultResponseDTO
+                {
+                    Status = "Not Found",
+                    Customer = null
+                };
+                return NotFound(notFoundResponse);
+            }
+
+            searchedCustomer.Name = customerDTO.Name;
+            searchedCustomer.Mobile = customerDTO.Mobile;
+            searchedCustomer.Email = customerDTO.Email;
+
+            Customer customer = _mapper.Map<Customer>(searchedCustomer);
+
+            if (_customerRepository.Update(customer))
+            {
+                var successResponse = new CustomerOperationResultResponseDTO
                 {
                     Status = "Success",
-                    Admin = _mapper.Map<AdminAccountDTO>(adminAccount)
+                    Customer = customerDTO
                 };
                 return Ok(successResponse);
             }
 
-            var failedResponse = new AdminOperationResultResponseDTO
+            var failedResponse = new CustomerOperationResultResponseDTO
             {
                 Status = "Failed",
-                Admin = _mapper.Map<AdminAccountDTO>(adminAccount)
+                Customer = customerDTO
             };
             return BadRequest(failedResponse);
 
+        }
+
+        [HttpDelete]
+        public ActionResult delete([FromQuery] string mobile)
+        {
+            Customer searchedCustomer = _customerRepository.GetByMobile(mobile);
+
+            if (searchedCustomer is null)
+            {
+                var notFoundResponse = new CustomerOperationResultResponseDTO
+                {
+                    Status = "Not Found",
+                    Customer = null
+                };
+                return NotFound(notFoundResponse);
+            }
+
+            Customer customer = _mapper.Map<Customer>(searchedCustomer);
+
+            if (_customerRepository.Delete(customer))
+            {
+                var successResponse = new CustomerOperationResultResponseDTO
+                {
+                    Status = "Deleted",
+                    Customer = null
+                };
+                return Ok(successResponse);
+            }
+
+            var failedResponse = new CustomerOperationResultResponseDTO
+            {
+                Status = "Failed",
+                Customer = customer
+            };
+            return BadRequest(failedResponse);
         }
     }
 }

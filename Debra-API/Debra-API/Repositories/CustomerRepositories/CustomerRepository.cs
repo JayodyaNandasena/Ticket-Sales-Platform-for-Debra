@@ -11,47 +11,49 @@ namespace Debra_API.Repositories.AdminAccountRepositories
             _dbContext = dBContext;
         }
 
-        public bool CreateAccount(AdminAccount adminAccount)
+        public bool Add(Customer customer)
         {
-            if (adminAccount == null)
+            if (customer == null)
             {
-                return false;
+                return false; 
             }
 
-            _dbContext.AdminAccounts.Add(adminAccount);
+            _dbContext.Customers.Add(customer);
             return Save();
         }
 
-        public bool DeleteAccount(AdminAccount adminAccount)
+        public bool Delete(Customer customer)
         {
-            if (adminAccount == null)
+            if (customer == null)
             {
-                return false;
+                return false;  
             }
 
-            _dbContext.AdminAccounts.Remove(adminAccount);
+            _dbContext.Customers.Remove(customer);
             return Save();
+
         }
 
-        public AdminAccount GetAdminAccount(string Username)
+        public IEnumerable<Customer> GetAll()
         {
-            return _dbContext.AdminAccounts.FirstOrDefault(
-                adminaccount => adminaccount.Username == Username);
+            return _dbContext.Customers.ToList();
         }
 
-        public IEnumerable<AdminAccount> GetAllAccounts()
+        public Customer GetByMobile(string mobile)
         {
-            return _dbContext.AdminAccounts.ToList();
+            return _dbContext.Customers.FirstOrDefault(
+                customer => customer.Mobile == mobile
+                );
         }
 
-        public bool UpdateAccount(AdminAccount adminAccount)
+        public bool Update(Customer customer)
         {
-            if (adminAccount == null)
+            if (customer == null)
             {
                 return false;
             }
 
-            _dbContext.AdminAccounts.Update(adminAccount);
+            _dbContext.Customers.Update(customer);
             return Save();
         }
 

@@ -6,6 +6,7 @@ namespace Debra_API.Data
     public class AppDBContext : DbContext
     {
         public DbSet<AdminAccount> AdminAccounts { get; set; }
+        public DbSet<Customer> Customers { get; set; }  
 
 
         //no need to do as public AppDBContext(DbContextOptions<AppDBContext> options) : base(options) because only one DBContext is available for this project
