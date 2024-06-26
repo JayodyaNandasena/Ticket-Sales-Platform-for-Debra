@@ -1,6 +1,4 @@
-﻿using Debra_API.Entities;
-
-namespace Debra_API.DTOs.AdminAccountDTOs
+﻿namespace Debra_API.DTOs.CustomerDTOs
 {
     public class CustomerOperationResultResponseDTO
     {

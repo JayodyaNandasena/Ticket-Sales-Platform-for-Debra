@@ -1,5 +1,7 @@
 using Debra_API.Data;
 using Debra_API.Repositories.AdminAccountRepositories;
+using Debra_API.Repositories.CustomerRepositories;
+using Debra_API.Repositories.PartnerRepositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Add services to the container.
 builder.Services.AddScoped<IAdminAccountRepository, AdminAccountRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

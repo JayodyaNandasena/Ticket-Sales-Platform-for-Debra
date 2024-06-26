@@ -1,6 +1,6 @@
 ﻿using Debra_API.Entities;
 
-namespace Debra_API.Repositories.AdminAccountRepositories
+namespace Debra_API.Repositories.CustomerRepositories
 {
     public interface ICustomerRepository
     {

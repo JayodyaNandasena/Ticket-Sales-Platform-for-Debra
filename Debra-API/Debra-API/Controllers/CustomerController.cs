@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Debra_API.DTOs.AdminAccountDTOs;
+using Debra_API.DTOs.CustomerDTOs;
 using Debra_API.Entities;
-using Debra_API.Repositories.AdminAccountRepositories;
+using Debra_API.Repositories.CustomerRepositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Debra_API.Controllers
@@ -113,9 +113,9 @@ namespace Debra_API.Controllers
                 return NotFound(notFoundResponse);
             }
 
-            Customer customer = _mapper.Map<Customer>(searchedCustomer);
+            CustomerDTO customer = _mapper.Map<CustomerDTO>(searchedCustomer);
 
-            if (_customerRepository.Delete(customer))
+            if (_customerRepository.Delete(searchedCustomer))
             {
                 var successResponse = new CustomerOperationResultResponseDTO
                 {

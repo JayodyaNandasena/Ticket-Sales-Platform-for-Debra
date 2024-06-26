@@ -70,8 +70,8 @@ namespace Debra_API.Controllers
             return Unauthorized(failedResponse);
         }
 
-        [HttpPut("(username)", Name = "updatePassword")]
-        public ActionResult updatePassword(string username, AdminUpdatePasswordDTO password) 
+        [HttpPut]
+        public ActionResult updatePassword([FromQuery] string username, AdminUpdatePasswordDTO password) 
         {
             AdminAccount adminAccount = _adminAccountRepository.GetAdminAccount(username);
             

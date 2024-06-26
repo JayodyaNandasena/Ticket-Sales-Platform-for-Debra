@@ -1,7 +1,7 @@
 ﻿using Debra_API.Data;
 using Debra_API.Entities;
 
-namespace Debra_API.Repositories.AdminAccountRepositories
+namespace Debra_API.Repositories.CustomerRepositories
 {
     public class CustomerRepository : ICustomerRepository
     {

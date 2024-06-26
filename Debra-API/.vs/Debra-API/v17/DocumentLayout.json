@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\controllers\\partnercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\controllers\\partnercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\entities\\partneraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\entities\\partneraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\dtos\\partnerdtos\\partneraccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\partnerdtos\\partneraccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\dtos\\partnerdtos\\partnerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\partnerdtos\\partnerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\migrations\\20240626114857_createcustomerstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\migrations\\20240626114857_createcustomerstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\repositories\\partnerrepositories\\partnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\repositories\\partnerrepositories\\partnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\controllers\\adminaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\controllers\\adminaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\dtos\\customerdtos\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\customerdtos\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\repositories\\customerrepositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\repositories\\customerrepositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\repositories\\customerrepositories\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\repositories\\customerrepositories\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\debra-api\\repositories\\partnerrepositories\\ipartnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\repositories\\partnerrepositories\\ipartnerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminAccountController.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\AdminAccountController.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Controllers\\AdminAccountController.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\AdminAccountController.cs",
-              "RelativeToolTip": "Debra-API\\Controllers\\AdminAccountController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAA0wCkAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T11:56:46.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240626114857_CreateCustomersTable.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Migrations\\20240626114857_CreateCustomersTable.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Migrations\\20240626114857_CreateCustomersTable.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Migrations\\20240626114857_CreateCustomersTable.cs",
-              "RelativeToolTip": "Debra-API\\Migrations\\20240626114857_CreateCustomersTable.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T11:49:24.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Controllers\\CustomerController.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Debra-API\\Controllers\\CustomerController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAswCkAAAAaAAAA",
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Profiles\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Profiles\\MappingProfile.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Profiles\\MappingProfile.cs",
+              "RelativeToolTip": "Debra-API\\Profiles\\MappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T17:06:38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\CustomerRepositories\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Repositories\\CustomerRepositories\\CustomerRepository.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\CustomerRepositories\\CustomerRepository.cs",
-              "RelativeToolTip": "Debra-API\\Repositories\\CustomerRepositories\\CustomerRepository.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAQwDkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T17:05:09.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Entities\\Customer.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Entities\\Customer.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Entities\\Customer.cs",
-              "RelativeToolTip": "Debra-API\\Entities\\Customer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T17:01:18.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerDTO.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\CustomerDTOs\\CustomerDTO.cs",
-              "RelativeDocumentMoniker": "Debra-API\\DTOs\\CustomerDTOs\\CustomerDTO.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\CustomerDTOs\\CustomerDTO.cs",
-              "RelativeToolTip": "Debra-API\\DTOs\\CustomerDTOs\\CustomerDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T17:02:42.597Z",
+              "WhenOpened": "2024-06-26T18:20:27.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AppDBContext.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Data\\AppDBContext.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Data\\AppDBContext.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Data\\AppDBContext.cs",
-              "RelativeToolTip": "Debra-API\\Data\\AppDBContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "PartnerRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\PartnerRepositories\\PartnerRepository.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Repositories\\PartnerRepositories\\PartnerRepository.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\PartnerRepositories\\PartnerRepository.cs",
+              "RelativeToolTip": "Debra-API\\Repositories\\PartnerRepositories\\PartnerRepository.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAcwEoAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T11:25:55.559Z",
+              "WhenOpened": "2024-06-26T17:46:23.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ICustomerRepository.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\CustomerRepositories\\ICustomerRepository.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Repositories\\CustomerRepositories\\ICustomerRepository.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\CustomerRepositories\\ICustomerRepository.cs",
-              "RelativeToolTip": "Debra-API\\Repositories\\CustomerRepositories\\ICustomerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Title": "IPartnerRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\PartnerRepositories\\IPartnerRepository.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Repositories\\PartnerRepositories\\IPartnerRepository.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\PartnerRepositories\\IPartnerRepository.cs",
+              "RelativeToolTip": "Debra-API\\Repositories\\PartnerRepositories\\IPartnerRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T17:05:44.359Z",
+              "WhenOpened": "2024-06-26T17:46:18.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PartnerDTO.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "RelativeDocumentMoniker": "Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "RelativeToolTip": "Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T17:44:22.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PartnerAccountDTO.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\PartnerDTOs\\PartnerAccountDTO.cs",
+              "RelativeDocumentMoniker": "Debra-API\\DTOs\\PartnerDTOs\\PartnerAccountDTO.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\PartnerDTOs\\PartnerAccountDTO.cs",
+              "RelativeToolTip": "Debra-API\\DTOs\\PartnerDTOs\\PartnerAccountDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T17:44:17.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PartnerController.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\PartnerController.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Controllers\\PartnerController.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\PartnerController.cs",
+              "RelativeToolTip": "Debra-API\\Controllers\\PartnerController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAewBsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T17:46:43.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PartnerAccount.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Entities\\PartnerAccount.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Entities\\PartnerAccount.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Entities\\PartnerAccount.cs",
+              "RelativeToolTip": "Debra-API\\Entities\\PartnerAccount.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAqwBAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T18:12:07.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Controllers\\CustomerController.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Debra-API\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAADwvx8AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T17:57:32.367Z",
               "EditorCaption": ""
             }
           ]
