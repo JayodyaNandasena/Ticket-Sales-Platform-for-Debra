@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.Hosting;
 
 namespace Debra_API.Entities
 {
-    public class Customer
+    public class Category
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -11,9 +12,9 @@ namespace Debra_API.Entities
         [Required]
         public string Name { get; set; } = null!;
         [Required]
-        public string Mobile { get; set; } = null!;
+        public decimal UnitPrice { get; set; }
         [Required]
-        public string Email { get; set; } = null!;
+        public decimal CommisionPerTicket { get; set; }
         public ICollection<Ticket> Tickets { get; } = [];
     }
 }

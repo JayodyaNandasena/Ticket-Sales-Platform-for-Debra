@@ -5,8 +5,8 @@ namespace Debra_API.Entities
     public class AdminAccount
     {
         [Key]
-        public required string Username { get; set; }
+        public string Username { get; set; } = null!;
         [Required]
-        public required string Password { get; set; }
+        public string Password { get; set; } = null!;
     }
 }

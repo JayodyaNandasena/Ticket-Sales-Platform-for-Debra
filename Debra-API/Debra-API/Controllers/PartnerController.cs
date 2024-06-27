@@ -18,10 +18,10 @@ namespace Debra_API.Controllers
         private IPartnerRepository _partnerRepository;
         private IPartnerAccountRepository _partnerAccountRepository;
 
-        public PartnerController(IMapper mapper, 
+        public PartnerController(IMapper mapper,
             IPartnerRepository partnerRepository,
             IPartnerAccountRepository partnerAccountRepository)
-        { 
+        {
             _mapper = mapper;
             _partnerRepository = partnerRepository;
             _partnerAccountRepository = partnerAccountRepository;
@@ -35,7 +35,7 @@ namespace Debra_API.Controllers
 
             PartnerAccount partnerAccount = _partnerAccountRepository
                 .findByUsername(partnerDTO.Account.Username);
-            
+
             if (partnerAccount != null)
             {
                 var usernameErrorResponse = new OperationResultResponseDTO<string>
@@ -134,7 +134,7 @@ namespace Debra_API.Controllers
                 return NotFound(notFoundResponse);
             }
 
-            if(partnerAccount.Password == partnerAccountDTO.Password)
+            if (partnerAccount.Password == partnerAccountDTO.Password)
             {
                 Partner partner = _partnerRepository.GetById(partnerAccount.PartnerId);
 
@@ -153,7 +153,7 @@ namespace Debra_API.Controllers
         }
 
         [HttpPut("UpdatePassword")]
-        public ActionResult updatePassword([FromQuery] string username, 
+        public ActionResult updatePassword([FromQuery] string username,
             PartnerAccountDTO newAccount)
         {
             PartnerAccount partnerAccount = _partnerAccountRepository
@@ -196,7 +196,7 @@ namespace Debra_API.Controllers
         [HttpPut]
         public ActionResult update([FromQuery] int id, PartnerDTO newPartner)
         {
-            
+
             //check whether the partner exists
             Partner partner = _partnerRepository.GetById(id);
 
@@ -212,29 +212,39 @@ namespace Debra_API.Controllers
 
             //check for email duplication
 
-            if (_partnerRepository.GetByEmail(newPartner.Email).Id != partner.Id)
+            Partner byEmail = _partnerRepository.GetByEmail(newPartner.Email);
+
+            if (byEmail != null)
             {
-                var emailErrorResponse = new OperationResultResponseDTO<string>
+                if (byEmail.Id != partner.Id)
                 {
-                    Status = "Failed",
-                    Result = "Duplicate Email"
-                };
-                return BadRequest(emailErrorResponse);
+                    var emailErrorResponse = new OperationResultResponseDTO<string>
+                    {
+                        Status = "Failed",
+                        Result = "Duplicate Email"
+                    };
+                    return BadRequest(emailErrorResponse);
+                }
             }
 
             //check for username duplication
 
-            if (_partnerAccountRepository.findByUsername(newPartner.Account.Username)
-                .PartnerId != partner.Id)
-            {
-                var usernameErrorResponse = new OperationResultResponseDTO<string>
-                {
-                    Status = "Failed",
-                    Result = "Duplicate Username"
-                };
-                return BadRequest(usernameErrorResponse);
 
-            }
+            PartnerAccount byUsername = _partnerAccountRepository.findByUsername(newPartner.Account.Username);
+            
+            if (byUsername != null)
+            {
+                if (byUsername.PartnerId != partner.Id)
+                {
+                    var usernameErrorResponse = new OperationResultResponseDTO<string>
+                    {
+                        Status = "Failed",
+                        Result = "Duplicate Username"
+                    };
+                    return BadRequest(usernameErrorResponse);
+
+                }
+            }            
 
             //updating the partner
 
@@ -250,12 +260,14 @@ namespace Debra_API.Controllers
                 return Ok(successResponse);
             }
 
-            var failedResponse = new OperationResultResponseDTO<PartnerDTO>
+            /*var failedResponse = new OperationResultResponseDTO<PartnerDTO>
             {
                 Status = "Failed",
                 Result = newPartner
             };
-            return BadRequest(failedResponse);
+            return BadRequest(failedResponse);*/
+
+            return BadRequest();
 
         }
 

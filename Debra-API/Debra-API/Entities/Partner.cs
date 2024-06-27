@@ -9,28 +9,28 @@ namespace Debra_API.Entities
         {
         }
 
-        public Partner(int id, string name, DateTime registeredDate, string type, string email, PartnerAccount account)
+        public Partner(int id, string name, DateTime registeredDate, string type, string email)
         {
             Id = id;
             Name = name;
             RegisteredDate = registeredDate;
             Type = type;
             Email = email;
-            Account = account;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         [Required]
         public DateTime RegisteredDate { get; set; }
         [Required]
-        public string Type { get; set; }
+        public string Type { get; set; } = null!;
         [Required]
-        public string Email { get; set; }
-        public PartnerAccount Account { get; set; }
+        public string Email { get; set; } = null!;
+        public PartnerAccount Account { get; set; } = null!;
+        public ICollection<Event> Events { get; } = [];
 
 
     }

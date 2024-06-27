@@ -66,8 +66,7 @@ namespace Debra_API.Repositories.PartnerRepositories
                 partner.Name,
                 partner.RegisteredDate,
                 partner.Type,
-                partner.Email,
-                partner.Account                
+                partner.Email               
                 );
 
             return Save();

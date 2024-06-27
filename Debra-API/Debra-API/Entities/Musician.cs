@@ -3,17 +3,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Debra_API.Entities
 {
-    public class Customer
+    public class Musician
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; } = null!;
+
         [Required]
-        public string Mobile { get; set; } = null!;
-        [Required]
-        public string Email { get; set; } = null!;
-        public ICollection<Ticket> Tickets { get; } = [];
+        public byte[] Image { get; set; } = [];
+        public List<Event> Events { get; } = [];
     }
 }
