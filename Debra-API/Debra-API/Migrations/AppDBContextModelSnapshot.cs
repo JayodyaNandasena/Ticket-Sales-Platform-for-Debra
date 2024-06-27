@@ -63,8 +63,11 @@ namespace Debra_API.Migrations
 
             modelBuilder.Entity("Debra_API.Entities.Partner", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -91,9 +94,8 @@ namespace Debra_API.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PartnerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PartnerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .IsRequired()

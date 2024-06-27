@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Debra_API.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20240626134248_CreatePartnerTable")]
-    partial class CreatePartnerTable
+    [Migration("20240627074030_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,8 +66,11 @@ namespace Debra_API.Migrations
 
             modelBuilder.Entity("Debra_API.Entities.Partner", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -94,9 +97,8 @@ namespace Debra_API.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PartnerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PartnerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Password")
                         .IsRequired()

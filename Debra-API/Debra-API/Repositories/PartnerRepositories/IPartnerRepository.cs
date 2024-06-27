@@ -8,7 +8,7 @@ namespace Debra_API.Repositories.PartnerRepositories
         bool Update(Partner partner);
         bool Delete(Partner partner);
         IEnumerable<Partner> GetAll();
-        Partner GetById(string id);
-        string generateNextId();
+        Partner GetByEmail(string email);
+        Partner GetById(int Id);
     }
 }

@@ -40,10 +40,17 @@ namespace Debra_API.Repositories.PartnerRepositories
             return _dbContext.Partners.ToList();
         }
 
-        public Partner GetById(string id)
+        public Partner GetByEmail(string email)
         {
             return _dbContext.Partners.FirstOrDefault(
-                partner => partner.Id == id
+                partner => partner.Email == email
+                );
+        }
+
+        public Partner GetById(int Id)
+        {
+            return _dbContext.Partners.FirstOrDefault(
+                partner => partner.Id == Id
                 );
         }
 
@@ -54,30 +61,16 @@ namespace Debra_API.Repositories.PartnerRepositories
                 return false;
             }
 
-            _dbContext.Partners.Update(partner);
+            Partner newPartner = new Partner(
+                partner.Id,
+                partner.Name,
+                partner.RegisteredDate,
+                partner.Type,
+                partner.Email,
+                partner.Account                
+                );
+
             return Save();
-        }
-
-        private string getLastId()
-        {
-            var lastPartner = _dbContext.Partners
-                                 .OrderByDescending(p => p.Id)
-                                 .FirstOrDefault();
-
-            if (lastPartner is null)
-            {
-                return "P000";
-            }
-
-            return lastPartner.Id;
-        }
-
-        public string generateNextId()
-        {
-            var lastId = getLastId();
-            var numericPart = int.Parse(lastId.Substring(1));
-            var nextNumericPart = numericPart + 1;
-            return $"P{nextNumericPart:D3}";
         }
 
         private bool Save()
