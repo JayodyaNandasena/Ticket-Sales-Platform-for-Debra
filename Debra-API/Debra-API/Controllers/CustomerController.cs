@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Debra_API.DTOs;
 using Debra_API.DTOs.CustomerDTOs;
 using Debra_API.Entities;
 using Debra_API.Repositories.CustomerRepositories;
@@ -26,10 +27,21 @@ namespace Debra_API.Controllers
 
             if (_customerRepository.Add(model))
             {
-                return Ok(model);
+				var okResponse = new OperationResultResponseDTO<CustomerDTO>
+				{
+					Status = "Success",
+					Result = _mapper.Map<CustomerDTO>(model)
+				};
+				return Ok(okResponse);
             }
 
-            return BadRequest(model);
+			var badResponse = new OperationResultResponseDTO<CustomerDTO>
+			{
+				Status = "Failed",
+				Result = _mapper.Map<CustomerDTO>(model)
+			};
+			return Ok(badResponse);
+
         }
 
         [HttpGet]
@@ -46,15 +58,20 @@ namespace Debra_API.Controllers
 
             if (customer is null)
             {
-                var notFoundResponse = new CustomerOperationResultResponseDTO
+                var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Not Found",
-                    Customer = null
-                };
+                    Status = "Failed",
+                    Result = "Not Found"
+				};
                 return NotFound(notFoundResponse);
             }
 
-            return Ok(customer);
+			var okResponse = new OperationResultResponseDTO<CustomerDTO>
+			{
+				Status = "Success",
+				Result = _mapper.Map<CustomerDTO>(customer)
+			};
+			return Ok(okResponse);
         }
 
 
@@ -65,11 +82,11 @@ namespace Debra_API.Controllers
             
             if (searchedCustomer is null)
             {
-                var notFoundResponse = new CustomerOperationResultResponseDTO
+                var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Not Found",
-                    Customer = null
-                };
+                    Status = "Failed",
+					Result = "Not Found"
+				};
                 return NotFound(notFoundResponse);
             }
 
@@ -81,18 +98,18 @@ namespace Debra_API.Controllers
 
             if (_customerRepository.Update(customer))
             {
-                var successResponse = new CustomerOperationResultResponseDTO
+                var successResponse = new OperationResultResponseDTO<CustomerDTO>
                 {
                     Status = "Success",
-                    Customer = customerDTO
+					Result = customerDTO
                 };
                 return Ok(successResponse);
             }
 
-            var failedResponse = new CustomerOperationResultResponseDTO
+            var failedResponse = new OperationResultResponseDTO<CustomerDTO>
             {
                 Status = "Failed",
-                Customer = customerDTO
+				Result = customerDTO
             };
             return BadRequest(failedResponse);
 
@@ -105,10 +122,10 @@ namespace Debra_API.Controllers
 
             if (searchedCustomer is null)
             {
-                var notFoundResponse = new CustomerOperationResultResponseDTO
+                var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Not Found",
-                    Customer = null
+                    Status = "Failed",
+                    Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
             }
@@ -117,18 +134,18 @@ namespace Debra_API.Controllers
 
             if (_customerRepository.Delete(searchedCustomer))
             {
-                var successResponse = new CustomerOperationResultResponseDTO
+                var successResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Deleted",
-                    Customer = null
-                };
+                    Status = "Success",
+					Result = "Deleted"
+				};
                 return Ok(successResponse);
             }
 
-            var failedResponse = new CustomerOperationResultResponseDTO
+            var failedResponse = new OperationResultResponseDTO<CustomerDTO>
             {
                 Status = "Failed",
-                Customer = customer
+				Result = customer
             };
             return BadRequest(failedResponse);
         }

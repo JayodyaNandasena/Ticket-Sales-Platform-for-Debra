@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/AddEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkRXZlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

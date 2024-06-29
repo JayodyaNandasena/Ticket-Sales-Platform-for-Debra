@@ -37,7 +37,7 @@ main {
     right: 0;
 }
 
-/* --- CSS form index page --- */
+/* --- CSS for index page --- */
 
 .home-carousel {
     height: 100vh;
@@ -57,4 +57,9 @@ main {
     width: 100%;
     object-fit: cover;
     opacity: 0.5;
+}
+
+
+.event-details{
+    margin-top: 80px;
 }
