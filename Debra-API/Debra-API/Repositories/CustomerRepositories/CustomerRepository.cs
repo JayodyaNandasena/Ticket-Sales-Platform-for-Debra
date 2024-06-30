@@ -39,7 +39,7 @@ namespace Debra_API.Repositories.CustomerRepositories
             return _dbContext.Customers.ToList();
         }
 
-        public Customer GetByMobile(string mobile)
+        public Customer? GetByMobile(string mobile)
         {
             return _dbContext.Customers.FirstOrDefault(
                 customer => customer.Mobile == mobile

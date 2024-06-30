@@ -40,14 +40,14 @@ namespace Debra_API.Repositories.PartnerRepositories
             return _dbContext.Partners.ToList();
         }
 
-        public Partner GetByEmail(string email)
+        public Partner? GetByEmail(string email)
         {
             return _dbContext.Partners.FirstOrDefault(
                 partner => partner.Email == email
                 );
         }
 
-        public Partner GetById(int Id)
+        public Partner? GetById(int Id)
         {
             return _dbContext.Partners.FirstOrDefault(
                 partner => partner.Id == Id

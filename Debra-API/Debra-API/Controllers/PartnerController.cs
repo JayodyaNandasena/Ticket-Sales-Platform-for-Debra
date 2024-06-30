@@ -40,7 +40,7 @@ namespace Debra_API.Controllers
             {
                 var usernameErrorResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Duplicate Username"
                 };
 
@@ -53,7 +53,7 @@ namespace Debra_API.Controllers
             {
                 var emailErrorResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Duplicate Email"
                 };
                 return NotFound(emailErrorResponse);
@@ -67,7 +67,7 @@ namespace Debra_API.Controllers
             {
                 var okResponse = new OperationResultResponseDTO<PartnerDTO>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
                     Result = partnerDTO
                 };
 
@@ -101,7 +101,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -111,7 +111,7 @@ namespace Debra_API.Controllers
 
             var foundResponse = new OperationResultResponseDTO<PartnerDTO>
             {
-                Status = "Found",
+                Status = Status.Success,
                 Result = partnerDTO
             };
 
@@ -128,7 +128,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -142,7 +142,7 @@ namespace Debra_API.Controllers
 
                 var response = new OperationResultResponseDTO<PartnerDTO>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
                     Result = partnerDTO
                 };
 
@@ -163,7 +163,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -175,7 +175,7 @@ namespace Debra_API.Controllers
             {
                 var successResponse = new OperationResultResponseDTO<PartnerAccountDTO>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
                     Result = _mapper.Map<PartnerAccountDTO>(partnerAccount)
                 };
                 return Ok(successResponse);
@@ -183,7 +183,7 @@ namespace Debra_API.Controllers
 
             var failedResponse = new OperationResultResponseDTO<PartnerAccountDTO>
             {
-                Status = "Failed",
+                Status = Status.Failed,
                 Result = newAccount
             };
             return BadRequest(failedResponse);
@@ -204,7 +204,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -220,7 +220,7 @@ namespace Debra_API.Controllers
                 {
                     var emailErrorResponse = new OperationResultResponseDTO<string>
                     {
-                        Status = "Failed",
+                        Status = Status.Failed,
                         Result = "Duplicate Email"
                     };
                     return BadRequest(emailErrorResponse);
@@ -238,7 +238,7 @@ namespace Debra_API.Controllers
                 {
                     var usernameErrorResponse = new OperationResultResponseDTO<string>
                     {
-                        Status = "Failed",
+                        Status = Status.Failed,
                         Result = "Duplicate Username"
                     };
                     return BadRequest(usernameErrorResponse);
@@ -254,7 +254,7 @@ namespace Debra_API.Controllers
             {
                 var successResponse = new OperationResultResponseDTO<PartnerDTO>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
                     Result = newPartner
                 };
                 return Ok(successResponse);
@@ -282,7 +282,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -294,7 +294,7 @@ namespace Debra_API.Controllers
             {
                 var successResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
                     Result = "Deleted"
                 };
                 return Ok(successResponse);
@@ -302,7 +302,7 @@ namespace Debra_API.Controllers
 
             var failedResponse = new OperationResultResponseDTO<PartnerDTO>
             {
-                Status = "Failed",
+                Status = Status.Failed,
                 Result = _mapper.Map<PartnerDTO>(partner)
             };
             return BadRequest(failedResponse);

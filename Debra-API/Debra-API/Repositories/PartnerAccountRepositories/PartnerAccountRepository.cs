@@ -10,7 +10,7 @@ namespace Debra_API.Repositories.PartnerAccountRepositories
         {
             _dbContext = dBContext;
         }
-        public PartnerAccount findByUsername(string username)
+        public PartnerAccount? findByUsername(string username)
         {
 
             return _dbContext.PartnerAccouts.FirstOrDefault(

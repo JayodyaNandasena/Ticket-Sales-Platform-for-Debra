@@ -33,7 +33,7 @@ namespace Debra_API.Repositories.AdminAccountRepositories
             return Save();
         }
 
-        public AdminAccount GetAdminAccount(string Username)
+        public AdminAccount? GetAdminAccount(string Username)
         {
             return _dbContext.AdminAccounts.FirstOrDefault(
                 adminaccount => adminaccount.Username == Username);

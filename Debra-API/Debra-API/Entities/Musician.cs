@@ -14,6 +14,6 @@ namespace Debra_API.Entities
 
         [Required]
         public byte[] Image { get; set; } = [];
-        public List<Event> Events { get; } = [];
+        public ICollection<Event> Events { get; } = [];
     }
 }

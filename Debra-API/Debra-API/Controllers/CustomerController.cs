@@ -29,7 +29,7 @@ namespace Debra_API.Controllers
             {
 				var okResponse = new OperationResultResponseDTO<CustomerDTO>
 				{
-					Status = "Success",
+					Status = Status.Success,
 					Result = _mapper.Map<CustomerDTO>(model)
 				};
 				return Ok(okResponse);
@@ -37,7 +37,7 @@ namespace Debra_API.Controllers
 
 			var badResponse = new OperationResultResponseDTO<CustomerDTO>
 			{
-				Status = "Failed",
+				Status = Status.Failed,
 				Result = _mapper.Map<CustomerDTO>(model)
 			};
 			return Ok(badResponse);
@@ -60,7 +60,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
 				};
                 return NotFound(notFoundResponse);
@@ -68,7 +68,7 @@ namespace Debra_API.Controllers
 
 			var okResponse = new OperationResultResponseDTO<CustomerDTO>
 			{
-				Status = "Success",
+				Status = Status.Success,
 				Result = _mapper.Map<CustomerDTO>(customer)
 			};
 			return Ok(okResponse);
@@ -84,7 +84,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
 					Result = "Not Found"
 				};
                 return NotFound(notFoundResponse);
@@ -100,7 +100,7 @@ namespace Debra_API.Controllers
             {
                 var successResponse = new OperationResultResponseDTO<CustomerDTO>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
 					Result = customerDTO
                 };
                 return Ok(successResponse);
@@ -108,7 +108,7 @@ namespace Debra_API.Controllers
 
             var failedResponse = new OperationResultResponseDTO<CustomerDTO>
             {
-                Status = "Failed",
+                Status = Status.Failed,
 				Result = customerDTO
             };
             return BadRequest(failedResponse);
@@ -124,7 +124,7 @@ namespace Debra_API.Controllers
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
                     Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -136,7 +136,7 @@ namespace Debra_API.Controllers
             {
                 var successResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
 					Result = "Deleted"
 				};
                 return Ok(successResponse);
@@ -144,7 +144,7 @@ namespace Debra_API.Controllers
 
             var failedResponse = new OperationResultResponseDTO<CustomerDTO>
             {
-                Status = "Failed",
+                Status = Status.Failed,
 				Result = customer
             };
             return BadRequest(failedResponse);

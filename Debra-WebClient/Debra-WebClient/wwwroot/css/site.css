@@ -59,7 +59,48 @@ main {
     opacity: 0.5;
 }
 
-
+/* --- CSS for add event page --- */
 .event-details{
     margin-top: 80px;
+}
+
+.add-event-heading {
+    color: #C19EE3;
+}
+
+.image-upload {
+    border: 2px dashed #fff;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.image-upload img {
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: #A280F4;
+    border: 2px solid #A280F4;
+}
+
+.btn-next {
+    background-color: #FC5C9C;
+    color: #fff;
+    border: none;
+}
+
+.btn-next:hover {
+    background-color: #e04b88;
+}
+
+.btn-cancel:hover {
+    background-color: #A280F4;
+    color: #fff;
 }

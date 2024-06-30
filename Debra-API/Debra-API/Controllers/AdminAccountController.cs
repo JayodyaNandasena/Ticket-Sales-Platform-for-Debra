@@ -29,7 +29,7 @@ namespace Debra_API.Controllers
             {
 				var okResponse = new OperationResultResponseDTO<AdminAccountDTO>
 				{
-					Status = "Success",
+					Status = Status.Success,
 					Result = _mapper.Map<AdminAccountDTO>(model)
 				};
 
@@ -38,7 +38,7 @@ namespace Debra_API.Controllers
 
 			var badResponse = new OperationResultResponseDTO<AdminAccountDTO>
 			{
-				Status = "Success",
+				Status = Status.Success,
 				Result = _mapper.Map<AdminAccountDTO>(model)
 			};
 
@@ -67,7 +67,7 @@ namespace Debra_API.Controllers
 
                     var okResponse = new OperationResultResponseDTO<AdminAccountDTO>
                     {
-                        Status = "Success",
+                        Status = Status.Success,
                         Result = validAdminAccountDTO
                     };
 
@@ -77,7 +77,7 @@ namespace Debra_API.Controllers
 
             var failedResponse = new OperationResultResponseDTO<string>
             {
-                Status = "Failed",
+                Status = Status.Failed,
                 Result = "Invalid Credentials"
             };
             return Unauthorized(failedResponse);
@@ -86,13 +86,13 @@ namespace Debra_API.Controllers
         [HttpPut]
         public ActionResult updatePassword([FromQuery] string username, AdminUpdatePasswordDTO password) 
         {
-            AdminAccount adminAccount = _adminAccountRepository.GetAdminAccount(username);
+            AdminAccount? adminAccount = _adminAccountRepository.GetAdminAccount(username);
             
             if (adminAccount is null)
             {
                 var notFoundResponse = new OperationResultResponseDTO<string>
                 {
-                    Status = "Failed",
+                    Status = Status.Failed,
 					Result = "Not Found"
                 };
                 return NotFound(notFoundResponse);
@@ -104,7 +104,7 @@ namespace Debra_API.Controllers
             {
                 var successResponse = new OperationResultResponseDTO<AdminAccountDTO>
                 {
-                    Status = "Success",
+                    Status = Status.Success,
 					Result = _mapper.Map<AdminAccountDTO>(adminAccount)
                 };
                 return Ok(successResponse);
@@ -112,7 +112,7 @@ namespace Debra_API.Controllers
 
             var failedResponse = new OperationResultResponseDTO<AdminAccountDTO>
             {
-                Status = "Failed",
+                Status = Status.Failed,
 				Result = _mapper.Map<AdminAccountDTO>(adminAccount)
             };
             return BadRequest(failedResponse);

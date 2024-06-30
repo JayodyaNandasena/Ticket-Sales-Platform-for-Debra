@@ -30,3 +30,6 @@ E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\obj\Debug\
 E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\obj\Debug\net8.0\Debra-WebClient.pdb
 E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\obj\Debug\net8.0\Debra-WebClient.genruntimeconfig.cache
 E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\obj\Debug\net8.0\ref\Debra-WebClient.dll
+E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\obj\Debug\net8.0\Debra-WebClient.csproj.AssemblyReference.cache
+E:\Projects\.NET\Debra-SOC_assignment\Debra-WebClient\Debra-WebClient\obj\Debug\net8.0\Debra-We.7D46F0E7.Up2Date

@@ -8,6 +8,6 @@ namespace Debra_API.Repositories.AdminAccountRepositories
         bool UpdateAccount(AdminAccount adminAccount);
         bool DeleteAccount(AdminAccount adminAccount);
         IEnumerable<AdminAccount> GetAllAccounts();
-        AdminAccount GetAdminAccount(string Username);
+        AdminAccount? GetAdminAccount(string Username);
     }
 }

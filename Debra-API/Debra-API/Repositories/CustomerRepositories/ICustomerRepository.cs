@@ -8,6 +8,6 @@ namespace Debra_API.Repositories.CustomerRepositories
         bool Update(Customer customer);
         bool Delete(Customer customer);
         IEnumerable<Customer> GetAll();
-        Customer GetByMobile(string mobile);
+        Customer? GetByMobile(string mobile);
     }
 }

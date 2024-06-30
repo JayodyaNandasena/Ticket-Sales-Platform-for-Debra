@@ -26,7 +26,11 @@ namespace Debra_API.Entities
 
         [Required]
         public string Location { get; set; } = null!;
-        [Required]
+
+		[Required]
+		public byte[] Image { get; set; } = [];
+
+		[Required]
         public Partner Partner { get; set; } = null!;
 
         public ICollection<Ticket> Tickets { get; set; } = [];
