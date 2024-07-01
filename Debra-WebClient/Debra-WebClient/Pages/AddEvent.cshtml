@@ -7,105 +7,242 @@
 <div class="event-details">
 	<div class="row text-center">
 		<div class="col">
-			<span class="text-white"><b>Add Event Details</b></span>
+			<span class="text-white"><b>Event Details</b></span>
 		</div>
 		<div class="col">
-			<span class="text-white-50"><b>Add Ticket Details</b></span>
+			<span class="text-white-50"><b>Ticket Details</b></span>
 		</div>
 		<div class="col">
 			<span class="text-white-50"><b>Summary</b></span>
 		</div>
 	</div>
 
-    <div class="row text-start">
-        <div class="col-12">
-            <h2 class="mb-4 add-event-heading">Event Details</h2>
+	<div class="container m-5 mt-3">
+        <div class="row text-start">
+            <form action="/" method="post">
+                <div class="col-12">
+                    <h2 class="mb-4 add-event-heading">Add Event Details</h2>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="form-label text-white col-3">Event Name</label>
+                    <div class="col-9">
+                        <input type="text" asp-for="newEvent.Title" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="form-label text-white col-3">Description</label>
+                    <div class="col-9">
+                        <textarea asp-for="newEvent.Description" class="form-control" id="validationTextarea" placeholder="Event Description" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="form-label text-white col-3">Date</label>
+                    <div class="col-9">
+                        <input type="date" asp-for="newEvent.Date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="form-label text-white col-3">Start Time</label>
+                    <div class="col-3">
+                        <input type="time" asp-for="newEvent.StartTime" class="form-control" required>
+                    </div>
+                    <label class="form-label text-white col-3">End Time</label>
+                    <div class="col-3">
+                        <input type="time" asp-for="newEvent.EndTime" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="form-label text-white col-3">Venue</label>
+                    <div class="col-9">
+                        <input type="text" asp-for="newEvent.Location" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="form-label text-white col-3">Image</label>
+                    <div class="col-9">
+                        <input asp-for="newEvent.ImageBase64" class="form-control"
+                               type="file" id="formFile" accept="image/*" required>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <h2 class="mb-4 add-event-heading">Add Musicians</h2>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <div class="col-6">
+                        <h4 class="add-event-heading">Select Musician/s</h4>
+                        <label class="form-label text-white col-3">Name</label>
+                        <div class="col-9">
+                            <select class="form-select bg-dark text-white" aria-label="Default select example" required>
+                                <option selected>Open this menu to Select or Add New Musicians</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="+_Add_New">+ Add New Musician</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <h4 class="add-event-heading">Selected Musician/s</h4>
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td>Thornton</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="col-12">
+                    <h2 class="mb-4 add-event-heading">Add Bands</h2>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <div class="col-6">
+                        <h4 class="add-event-heading">Select Band/s</h4>
+                        <label class="form-label text-white col-3">Name</label>
+                        <div class="col-9">
+                            <select class="form-select bg-dark text-white" aria-label="Default select example" required>
+                                <option selected>Open this menu to Select or Add New Bands</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="+_Add_New">+ Add New Band</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <h4 class="add-event-heading">Selected Band/s</h4>
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td>Thornton</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+					<button type="button" onclick="showTicketDetails()" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
+                    <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 mx-5 rounded-pill" asp-page-handler="Tickets" />
+                </div>
+            </form>
         </div>
-
-        <form action="/" method="post">
-            <div class="form-group row mb-3">
-                <label for="eventName" class="form-label text-white col-3">Event Name</label>
-                <div class="col-9">
-                    <input type="text" asp-for="newEvent.Name" class="form-control" id="eventName" name="eventName">
-                </div>
-            </div>
-            <div class="form-group row mb-3">
-                <label for="eventName" class="form-label text-white col-3">Description</label>
-                <div class="col-9">
-                    <textarea asp-for="newEvent.Description" rows="5"></textarea>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <hr />
-
-
-    <div class="row text-start">
-        <h2 class="mb-4 add-event-heading">Event Details</h2>
-
-        <form action="/" method="post">
-            <div class="row">
-                <label for="eventName" class="form-label text-white col-3">Event Name</label>
-                <input type="text" class="form-control col-6" id="eventName">
-            </div>
-            
-        
-        </form>
-
-    </div>
-
-	<div class="event-details-form bg-danger-subtle">
-        <h2 class="mb-4 add-event-heading">Event Details</h2>
-		<form>
-			<div class="row">
-                <label for="eventName" class="form-label text-white col-3">Event Name</label>
-                <input type="text" class="form-control col-6" id="eventName">
-            </div>
-            <div class="row mb-3">
-                <label for="description" class="col-3 form-label text-white">Description</label>
-                <textarea class="col-9 form-control" id="description" rows="5"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="date" class="form-label text-white">Date</label>
-                <input type="date" class="form-control" id="date">
-            </div>
-            <div class="mb-3">
-                <label for="time" class="form-label text-white">Time</label>
-                <input type="time" class="form-control" id="time">
-            </div>
-            <div class="mb-3">
-                <label for="venue" class="form-label text-white">Venue</label>
-                <input type="text" class="form-control" id="venue">
-            </div>
-            <div class="mb-3">
-                <label for="eventImage" class="form-label text-white">Image</label>
-                <div class="image-upload" id="imageUpload">
-                    <img id="imagePreview" src="#" alt="Image Preview">
-                    <input type="file" class="" id="eventImageInput" accept="image/*">
-                </div>
-            </div>
-
-            <h2 class="mb-4 add-event-heading">Select Musicians</h2>
-            <div class="mb-3">
-                <label for="musicianName" class="form-label text-white">Name</label>
-                <select class="form-control" id="musicianName">
-                    <option value="" disabled selected>Select Musician</option>
-                    <!-- Add musician options here -->
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="musicianImage" class="form-label text-white">Image</label>
-                <div class="image-upload" id="musicianImage">
-                    <span>+</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <button type="button" class="btn btn-cancel">Cancel</button>
-                <button type="submit" class="btn btn-next">Next</button>
-            </div>
-        </form>
 	</div>
+</div>
+
+<div class="ticket-details">
+    <div class="row text-center">
+        <div class="col">
+            <span class="text-white-50"><b>Event Details</b></span>
+        </div>
+        <div class="col">
+            <span class="text-white"><b>Ticket Details</b></span>
+        </div>
+        <div class="col">
+            <span class="text-white-50"><b>Summary</b></span>
+        </div>
+    </div>
+
+    <div class="container m-5 mt-3">
+        <div class="row text-start">
+			<form action="/" method="post">
+                <div class="col-12">
+                    <h2 class="mb-4 add-event-heading">Add Ticket Details</h2>
+                </div>
+
+                <table class="table table-dark table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ticket Type</th>
+                            <th scope="col">Quanttity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Commision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <input type="text" asp-for="newEvent.Tickets" class="form-control" required>
+                            </th>
+                            <th scope="row">
+                                <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step="1" required>
+                            </th>
+                            <th scope="row">
+								<input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
+                            </th>
+                            <th scope="row">
+                                <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="col-12">
+                    <h6 class="mb-4 more-ticket-types py-3">Add More</h6>
+                </div>
+
+
+
+
+
+
+            
+
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
+                    <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 mx-5 rounded-pill" asp-page-handler="Add" />
+                </div>
+            
+            </form>
+
+        </div>
+    </div>
 </div>
 
 

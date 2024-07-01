@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -20,6 +20,7 @@ html {
 body {
     top: 0;
     margin-bottom: 60px;
+    font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -86,21 +87,33 @@ main {
 
 .btn-cancel {
     background-color: transparent;
-    color: #A280F4;
-    border: 2px solid #A280F4;
+    color: #F5167E;
+    border: 2px solid #F5167E;
 }
 
 .btn-next {
-    background-color: #FC5C9C;
+    background-color: #F5167E;
     color: #fff;
     border: none;
 }
 
 .btn-next:hover {
-    background-color: #e04b88;
+    color: #F5167E;
+    background-color: #fff;
 }
 
+
 .btn-cancel:hover {
-    background-color: #A280F4;
+    background: rgba(245, 22, 126, .5);
+    color: #fff;
+}
+
+.more-ticket-types {
+    border: 1px dashed #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     color: #fff;
 }
