@@ -3,7 +3,7 @@ using Debra_API.DTOs.EventDTOs.TicketDTOs;
 
 namespace Debra_API.DTOs.EventDTOs
 {
-    public class EventDTO
+    public class EventCreateDTO
     {
         public int Id { get; set; }
         public string Title { get; set; } = null!;
@@ -13,9 +13,11 @@ namespace Debra_API.DTOs.EventDTOs
         public TimeOnly EndTime { get; set; }
         public string Location { get; set; } = null!;
         public string ImageBase64 { get; set; } = null!;
-        public PartnerDTO Partner { get; set; } = null!;
-        public List<TicketDTO> Tickets { get; set; } = [];
+        public int PartnerId { get; set; }
+        public EventTicketCreateDTO? Tickets { get; set; }
+
+        /*public List<TicketDTO> Tickets { get; set; } = [];
         public List<MusicianDTO> Musicians { get; set; } = [];
-        public List<BandDTO> Bands { get; set; } = [];
+        public List<BandDTO> Bands { get; set; } = [];*/
     }
 }

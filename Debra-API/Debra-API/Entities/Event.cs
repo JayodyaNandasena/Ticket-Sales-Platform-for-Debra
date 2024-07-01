@@ -19,10 +19,10 @@ namespace Debra_API.Entities
         public DateOnly Date { get; set; }
 
         [Required]
-        public TimeSpan StartTime { get; set; }
+        public TimeOnly StartTime { get; set; }
 
         [Required]
-        public TimeSpan EndTime { get; set; }
+        public TimeOnly EndTime { get; set; }
 
         [Required]
         public string Location { get; set; } = null!;

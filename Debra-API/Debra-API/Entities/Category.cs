@@ -10,13 +10,15 @@ namespace Debra_API.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
-        public string Name { get; set; } = null!;
+        //[Required]
+        //public string Name { get; set; } = null!;
         [Required]
         public decimal UnitPrice { get; set; }
         [Required]
         public decimal CommisionPerTicket { get; set; }
         [JsonIgnore]
         public ICollection<Ticket> Tickets { get; } = [];
+
+
     }
 }
