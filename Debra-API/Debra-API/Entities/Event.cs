@@ -27,8 +27,8 @@ namespace Debra_API.Entities
         [Required]
         public string Location { get; set; } = null!;
 
-		[Required]
-		public byte[] Image { get; set; } = [];
+		public byte[]? Image { get; set; } = [];
+		public int PartnerId { get; set; }
 
 		[Required]
         public Partner Partner { get; set; } = null!;

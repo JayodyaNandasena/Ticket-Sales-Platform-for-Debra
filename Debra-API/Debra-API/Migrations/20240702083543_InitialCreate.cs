@@ -6,38 +6,66 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Debra_API.Migrations
 {
     /// <inheritdoc />
-    public partial class finalMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Bands",
+                name: "AdminAccounts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    Username = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bands", x => x.Id);
+                    table.PrimaryKey("PK_AdminAccounts", x => x.Username);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Customers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mobile = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Partners",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegisteredDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Partners", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TicketDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CommisionPerTicket = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_TicketDetails", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,9 +77,10 @@ namespace Debra_API.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateOnly>(type: "date", nullable: false),
-                    StartTime = table.Column<TimeSpan>(type: "time", nullable: false),
-                    EndTime = table.Column<TimeSpan>(type: "time", nullable: false),
+                    StartTime = table.Column<TimeOnly>(type: "time", nullable: false),
+                    EndTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: false),
                     PartnerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -66,38 +95,61 @@ namespace Debra_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PartnerAccounts",
+                columns: table => new
+                {
+                    Username = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PartnerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PartnerAccounts", x => x.Username);
+                    table.ForeignKey(
+                        name: "FK_PartnerAccounts_Partners_PartnerId",
+                        column: x => x.PartnerId,
+                        principalTable: "Partners",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Bands",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bands", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Bands_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Musicians",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Musicians", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EventBands",
-                columns: table => new
-                {
-                    BandsId = table.Column<int>(type: "int", nullable: false),
-                    EventsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventBands", x => new { x.BandsId, x.EventsId });
                     table.ForeignKey(
-                        name: "FK_EventBands_Bands_BandsId",
-                        column: x => x.BandsId,
-                        principalTable: "Bands",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EventBands_Events_EventsId",
-                        column: x => x.EventsId,
+                        name: "FK_Musicians_Events_EventId",
+                        column: x => x.EventId,
                         principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -110,18 +162,12 @@ namespace Debra_API.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IsSold = table.Column<bool>(type: "bit", nullable: false),
                     EventId = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    DetailsId = table.Column<int>(type: "int", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tickets", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Tickets_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Tickets_Customers_CustomerId",
                         column: x => x.CustomerId,
@@ -133,41 +179,18 @@ namespace Debra_API.Migrations
                         principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EventMusicians",
-                columns: table => new
-                {
-                    EventsId = table.Column<int>(type: "int", nullable: false),
-                    MusiciansId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventMusicians", x => new { x.EventsId, x.MusiciansId });
                     table.ForeignKey(
-                        name: "FK_EventMusicians_Events_EventsId",
-                        column: x => x.EventsId,
-                        principalTable: "Events",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EventMusicians_Musicians_MusiciansId",
-                        column: x => x.MusiciansId,
-                        principalTable: "Musicians",
+                        name: "FK_Tickets_TicketDetails_DetailsId",
+                        column: x => x.DetailsId,
+                        principalTable: "TicketDetails",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventBands_EventsId",
-                table: "EventBands",
-                column: "EventsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventMusicians_MusiciansId",
-                table: "EventMusicians",
-                column: "MusiciansId");
+                name: "IX_Bands_EventId",
+                table: "Bands",
+                column: "EventId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_PartnerId",
@@ -175,14 +198,25 @@ namespace Debra_API.Migrations
                 column: "PartnerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tickets_CategoryId",
-                table: "Tickets",
-                column: "CategoryId");
+                name: "IX_Musicians_EventId",
+                table: "Musicians",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PartnerAccounts_PartnerId",
+                table: "PartnerAccounts",
+                column: "PartnerId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_CustomerId",
                 table: "Tickets",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tickets_DetailsId",
+                table: "Tickets",
+                column: "DetailsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_EventId",
@@ -194,13 +228,7 @@ namespace Debra_API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "EventBands");
-
-            migrationBuilder.DropTable(
-                name: "EventMusicians");
-
-            migrationBuilder.DropTable(
-                name: "Tickets");
+                name: "AdminAccounts");
 
             migrationBuilder.DropTable(
                 name: "Bands");
@@ -209,10 +237,22 @@ namespace Debra_API.Migrations
                 name: "Musicians");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "PartnerAccounts");
+
+            migrationBuilder.DropTable(
+                name: "Tickets");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "TicketDetails");
+
+            migrationBuilder.DropTable(
+                name: "Partners");
         }
     }
 }

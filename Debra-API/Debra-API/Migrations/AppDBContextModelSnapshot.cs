@@ -44,40 +44,21 @@ namespace Debra_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<byte[]>("Image")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bands");
-                });
-
-            modelBuilder.Entity("Debra_API.Entities.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("EventId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("CommisionPerTicket")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("VarBinary(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(18,2)");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.HasIndex("EventId");
+
+                    b.ToTable("Bands");
                 });
 
             modelBuilder.Entity("Debra_API.Entities.Customer", b =>
@@ -120,12 +101,11 @@ namespace Debra_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<TimeSpan>("EndTime")
+                    b.Property<TimeOnly>("EndTime")
                         .HasColumnType("time");
 
                     b.Property<byte[]>("Image")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("VarBinary(max)");
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -134,7 +114,7 @@ namespace Debra_API.Migrations
                     b.Property<int>("PartnerId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("StartTime")
+                    b.Property<TimeOnly>("StartTime")
                         .HasColumnType("time");
 
                     b.Property<string>("Title")
@@ -156,15 +136,19 @@ namespace Debra_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
                     b.Property<byte[]>("Image")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("VarBinary(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EventId");
 
                     b.ToTable("Musicians");
                 });
@@ -214,7 +198,7 @@ namespace Debra_API.Migrations
                     b.HasIndex("PartnerId")
                         .IsUnique();
 
-                    b.ToTable("PartnerAccouts");
+                    b.ToTable("PartnerAccounts");
                 });
 
             modelBuilder.Entity("Debra_API.Entities.Ticket", b =>
@@ -222,10 +206,10 @@ namespace Debra_API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<int>("DetailsId")
                         .HasColumnType("int");
 
                     b.Property<int>("EventId")
@@ -236,43 +220,43 @@ namespace Debra_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("DetailsId");
 
                     b.HasIndex("EventId");
 
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("EventBands", b =>
+            modelBuilder.Entity("Debra_API.Entities.TicketDetails", b =>
                 {
-                    b.Property<int>("BandsId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("EventsId")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.HasKey("BandsId", "EventsId");
+                    b.Property<decimal>("CommisionPerTicket")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasIndex("EventsId");
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.ToTable("EventBands");
+                    b.HasKey("Id");
+
+                    b.ToTable("TicketDetails");
                 });
 
-            modelBuilder.Entity("EventMusicians", b =>
+            modelBuilder.Entity("Debra_API.Entities.Band", b =>
                 {
-                    b.Property<int>("EventsId")
-                        .HasColumnType("int");
+                    b.HasOne("Debra_API.Entities.Event", "Event")
+                        .WithMany("Bands")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("MusiciansId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EventsId", "MusiciansId");
-
-                    b.HasIndex("MusiciansId");
-
-                    b.ToTable("EventMusicians");
+                    b.Navigation("Event");
                 });
 
             modelBuilder.Entity("Debra_API.Entities.Event", b =>
@@ -284,6 +268,17 @@ namespace Debra_API.Migrations
                         .IsRequired();
 
                     b.Navigation("Partner");
+                });
+
+            modelBuilder.Entity("Debra_API.Entities.Musician", b =>
+                {
+                    b.HasOne("Debra_API.Entities.Event", "Event")
+                        .WithMany("Musicians")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
                 });
 
             modelBuilder.Entity("Debra_API.Entities.PartnerAccount", b =>
@@ -299,15 +294,15 @@ namespace Debra_API.Migrations
 
             modelBuilder.Entity("Debra_API.Entities.Ticket", b =>
                 {
-                    b.HasOne("Debra_API.Entities.Category", "Category")
-                        .WithMany("Tickets")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Debra_API.Entities.Customer", "Customer")
                         .WithMany("Tickets")
                         .HasForeignKey("CustomerId");
+
+                    b.HasOne("Debra_API.Entities.TicketDetails", "TicketDetails")
+                        .WithMany("Tickets")
+                        .HasForeignKey("DetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Debra_API.Entities.Event", "Event")
                         .WithMany("Tickets")
@@ -315,46 +310,11 @@ namespace Debra_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
-
                     b.Navigation("Customer");
 
                     b.Navigation("Event");
-                });
 
-            modelBuilder.Entity("EventBands", b =>
-                {
-                    b.HasOne("Debra_API.Entities.Band", null)
-                        .WithMany()
-                        .HasForeignKey("BandsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Debra_API.Entities.Event", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EventMusicians", b =>
-                {
-                    b.HasOne("Debra_API.Entities.Event", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Debra_API.Entities.Musician", null)
-                        .WithMany()
-                        .HasForeignKey("MusiciansId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Debra_API.Entities.Category", b =>
-                {
-                    b.Navigation("Tickets");
+                    b.Navigation("TicketDetails");
                 });
 
             modelBuilder.Entity("Debra_API.Entities.Customer", b =>
@@ -364,6 +324,10 @@ namespace Debra_API.Migrations
 
             modelBuilder.Entity("Debra_API.Entities.Event", b =>
                 {
+                    b.Navigation("Bands");
+
+                    b.Navigation("Musicians");
+
                     b.Navigation("Tickets");
                 });
 
@@ -373,6 +337,11 @@ namespace Debra_API.Migrations
                         .IsRequired();
 
                     b.Navigation("Events");
+                });
+
+            modelBuilder.Entity("Debra_API.Entities.TicketDetails", b =>
+                {
+                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

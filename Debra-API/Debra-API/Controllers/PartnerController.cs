@@ -136,7 +136,7 @@ namespace Debra_API.Controllers
 
             if (partnerAccount.Password == partnerAccountDTO.Password)
             {
-                Partner partner = _partnerRepository.GetById(partnerAccount.PartnerId);
+                Partner partner = _partnerRepository.GetById(partnerAccount.Partner.Id);
 
                 PartnerDTO partnerDTO = _mapper.Map<PartnerDTO>(partner);
 
@@ -234,7 +234,7 @@ namespace Debra_API.Controllers
             
             if (byUsername != null)
             {
-                if (byUsername.PartnerId != partner.Id)
+                if (byUsername.Partner.Id != partner.Id)
                 {
                     var usernameErrorResponse = new OperationResultResponseDTO<string>
                     {

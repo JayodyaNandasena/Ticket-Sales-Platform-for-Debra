@@ -13,10 +13,11 @@ namespace Debra_API.Entities
         [Required]
         public string Name { get; set; } = null!;
 
-        [Required]
-        public byte[] Image { get; set; } = [];
-        [JsonIgnore]
+        public byte[]? Image { get; set; } = [];
+		//[JsonIgnore]
+		public int EventId { get; set; }
 
-        public ICollection<Event> Events { get; } = [];
-    }
+		[Required]
+		public required Event Event { get; set; }
+	}
 }

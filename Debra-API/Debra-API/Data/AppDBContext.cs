@@ -15,8 +15,8 @@ namespace Debra_API.Data
         public DbSet<AdminAccount> AdminAccounts { get; set; }
         public DbSet<Customer> Customers { get; set; }  
         public DbSet<Partner> Partners { get; set; }
-        public DbSet<PartnerAccount> PartnerAccouts { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<PartnerAccount> PartnerAccounts { get; set; }
+        public DbSet<TicketDetails> TicketDetails { get; set; }
         public DbSet<Band> Bands { get; set; }
         public DbSet<Musician> Musicians { get; set; }
         public DbSet<Event> Events { get; set; }
@@ -24,11 +24,15 @@ namespace Debra_API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().Property(p => p.UnitPrice).HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<Category>().Property(p => p.CommisionPerTicket).HasColumnType("decimal(18,2)");
+            modelBuilder.Entity<TicketDetails>().Property(p => p.UnitPrice).HasColumnType("decimal(18,2)");
+            modelBuilder.Entity<TicketDetails>().Property(p => p.CommisionPerTicket).HasColumnType("decimal(18,2)");
+			modelBuilder.Entity<Event>().Property(p => p.Image).HasColumnType("VarBinary(max)");
+			modelBuilder.Entity<Musician>().Property(p => p.Image).HasColumnType("VarBinary(max)");
+			modelBuilder.Entity<Band>().Property(p => p.Image).HasColumnType("VarBinary(max)");
 
-            //one-to-many Relationships (with shadow foreign keys)
-            modelBuilder.Entity<Partner>()
+
+			//one-to-many Relationships (with shadow foreign keys)
+			modelBuilder.Entity<Partner>()
                 .HasMany(e => e.Events)
                 .WithOne(e => e.Partner)
                 .HasForeignKey("PartnerId")
@@ -40,10 +44,10 @@ namespace Debra_API.Data
                 .HasForeignKey("EventId")
                 .IsRequired();
 
-            modelBuilder.Entity<Category>()
+            modelBuilder.Entity<TicketDetails>()
                 .HasMany(e => e.Tickets)
-                .WithOne(e => e.Category)
-                .HasForeignKey("CategoryId")
+                .WithOne(e => e.TicketDetails)
+                .HasForeignKey("DetailsId")
                 .IsRequired();
 
             modelBuilder.Entity<Customer>()
@@ -52,19 +56,20 @@ namespace Debra_API.Data
                 .HasForeignKey("CustomerId")
                 .IsRequired(false);
 
-            //many-to-many Relationships
             modelBuilder.Entity<Event>()
                 .HasMany(e => e.Musicians)
-                .WithMany(e => e.Events)
-                .UsingEntity("EventMusicians");
+                .WithOne(e => e.Event)
+				.HasForeignKey("EventId")
+				.IsRequired();
 
-            modelBuilder.Entity<Event>()
+			modelBuilder.Entity<Event>()
                 .HasMany(e => e.Bands)
-                .WithMany(e => e.Events)
-                .UsingEntity("EventBands");
+                .WithOne(e => e.Event)
+				.HasForeignKey("EventId")
+				.IsRequired();
 
 
-        }
+		}
         
     }
 }

@@ -13,12 +13,12 @@ namespace Debra_API.Repositories.CategoryRepositories
             _dbContext = dbContext;
         }
 
-        public int add(Category category)
+        public int add(TicketDetails category)
         {
-            _dbContext.Categories.Add(category);
+            _dbContext.TicketDetails.Add(category);
 
 
-            return _dbContext.Categories
+            return _dbContext.TicketDetails
                 .OrderByDescending(t => t.Id)
                 .Select(t => t.Id)
                 .FirstOrDefault();

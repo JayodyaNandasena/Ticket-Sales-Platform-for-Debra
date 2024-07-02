@@ -13,7 +13,7 @@ namespace Debra_API.Repositories.PartnerAccountRepositories
         public PartnerAccount? findByUsername(string username)
         {
 
-            return _dbContext.PartnerAccouts.FirstOrDefault(
+            return _dbContext.PartnerAccounts.FirstOrDefault(
                 partnerAccount => partnerAccount.Username == username
                 );
         }
@@ -25,7 +25,7 @@ namespace Debra_API.Repositories.PartnerAccountRepositories
                 return false;
             }
 
-            _dbContext.PartnerAccouts.Update(partnerAccount);
+            _dbContext.PartnerAccounts.Update(partnerAccount);
             return Save();
         }
 

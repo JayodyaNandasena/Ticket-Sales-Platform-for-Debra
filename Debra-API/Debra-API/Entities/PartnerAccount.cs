@@ -10,11 +10,10 @@ namespace Debra_API.Entities
         public string Username { get; set; } = null!;
         [Required]
         public string Password { get; set; } = null!;
-
-        [ForeignKey("Partner")]
-        public int PartnerId { get; set; }
-        [JsonIgnore]
-        public Partner Partner { get; set; } = null!;
-    }
+		[ForeignKey("Partner")]
+		public int PartnerId { get; set; }
+		[JsonIgnore]
+		public Partner Partner { get; set; } = null!;
+	}
 }
 

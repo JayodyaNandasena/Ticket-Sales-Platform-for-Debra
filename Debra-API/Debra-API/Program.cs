@@ -1,8 +1,10 @@
 using Debra_API.Data;
 using Debra_API.Repositories.AdminAccountRepositories;
+using Debra_API.Repositories.BandRepository;
 using Debra_API.Repositories.CategoryRepositories;
 using Debra_API.Repositories.CustomerRepositories;
 using Debra_API.Repositories.EventRepositories;
+using Debra_API.Repositories.MusicianRepositories;
 using Debra_API.Repositories.PartnerAccountRepositories;
 using Debra_API.Repositories.PartnerRepositories;
 using Debra_API.Repositories.TicketRepositories;
@@ -27,6 +29,8 @@ builder.Services.AddScoped<IPartnerAccountRepository, PartnerAccountRepository>(
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddScoped<IMusicianRepository, MusicianRepository>();
+builder.Services.AddScoped<IBandRepository, BandRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

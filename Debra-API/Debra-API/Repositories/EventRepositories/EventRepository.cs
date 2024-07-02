@@ -20,16 +20,21 @@ namespace Debra_API.Repositories.EventRepositories
             }
 
             _dbContext.Events.Add(newEvent);
+
             if (Save())
             {
                 return newEvent;
             }
+
             return null;
         }
 
+		public List<Event> GetAll()
+		{
+			return _dbContext.Events.ToList();
+		}
 
-
-        private bool Save()
+		private bool Save()
         {
             return _dbContext.SaveChanges() > 0;
         }

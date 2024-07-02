@@ -4,6 +4,6 @@ namespace Debra_API.Repositories.CategoryRepositories
 {
     public interface ICategoryRepository
     {
-        int add(Category category);
+        int add(TicketDetails category);
     }
 }

@@ -12,7 +12,7 @@ namespace Debra_API.Entities
         [Required]
         public Event Event { get; set; } = null!;
         [Required]
-        public Category Category { get; set; } = null!; // Required foreign key property
+        public TicketDetails TicketDetails { get; set; } = null!; // Required foreign key property
         public Customer? Customer { get; set; } = null!; // Optional foreign key property
     }
 }

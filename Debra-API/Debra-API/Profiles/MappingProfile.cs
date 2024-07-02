@@ -23,20 +23,46 @@ namespace Debra_API.Profiles
             CreateMap<PartnerAccount, PartnerAccountDTO>();
             CreateMap<PartnerAccountDTO, PartnerAccount>();
 
-            CreateMap<CategoryDTO, Category>();
-            CreateMap<Category, CategoryDTO>();
+            CreateMap<CategoryDTO, TicketDetails>();
+            CreateMap<TicketDetails, CategoryDTO>();
+
+			CreateMap<BandDTO, Band>();
+			CreateMap<Band, BandDTO>();
+			CreateMap<Band, BandReadDTO>();
+			CreateMap<BandReadDTO, Band>();
+
+			CreateMap<MusicianDTO, Musician>();
+			CreateMap<Musician, MusicianDTO>();
 
 
-            CreateMap<TicketCreateDTO, Ticket>()
+			CreateMap<TicketCreateDTO, Ticket>()
                 .ForMember(dest => dest.Event, opt => opt.MapFrom(src => new Event { Id = src.EventId }))
-                .ForMember(dest => dest.Category, opt => opt.MapFrom(src => new Category { Id = src.CategoryId }))
+                .ForMember(dest => dest.TicketDetails, opt => opt.MapFrom(src => new TicketDetails { Id = src.CategoryId }))
                 .ForMember(dest => dest.Customer, opt => opt.Ignore());
 
             CreateMap<Ticket, TicketCreateDTO>()
                 .ForMember(dest => dest.EventId, opt => opt.MapFrom(src => src.Event.Id))
-                .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id));
+                .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.TicketDetails));
 
-            CreateMap<Event, EventCreateDTO>()
+			CreateMap<Event, EventCreateDTO>()
+				.ForMember(dest => dest.ImageBase64, opt => opt.Ignore())
+				.ForPath(dest => dest.PartnerId, opt => opt.MapFrom(src => src.Partner.Id))
+				.ForMember(dest => dest.Tickets, opt => opt.Ignore());
+
+
+
+			CreateMap<EventCreateDTO, Event>()
+				.ForMember(dest => dest.Image, opt => opt.Ignore())
+				//.ForPath(dest => dest.Partner.Id, opt => opt.MapFrom(src => src.PartnerId))
+				.ForMember(dest => dest.Tickets, opt => opt.Ignore())
+				.ForMember(dest => dest.Musicians, opt => opt.Ignore())
+				.ForMember(dest => dest.Bands, opt => opt.Ignore());
+
+            CreateMap<Event, EventReadDTO>()
+                .ForMember(dest => dest.ImageBase64, opt => opt.Ignore());
+				//.ForPath(dest => dest.Partner.Id, opt => opt.MapFrom(src => src.Partner.Id))
+
+			/*CreateMap<Event, EventCreateDTO>()
                 .ForMember(dest => dest.ImageBase64, opt => opt.MapFrom(src => Convert.ToBase64String(src.Image)))
                 .ForMember(dest => dest.PartnerId, opt => opt.MapFrom(src => src.Partner.Id)) // Assuming Partner has an Id property
                 .ForMember(dest => dest.Tickets, opt => opt.Ignore());
@@ -46,7 +72,7 @@ namespace Debra_API.Profiles
                 .ForMember(dest => dest.Partner, opt => opt.Ignore())
                 .ForMember(dest => dest.Tickets, opt => opt.Ignore())
                 .ForMember(dest => dest.Musicians, opt => opt.Ignore())
-                .ForMember(dest => dest.Bands, opt => opt.Ignore());
-        }
+                .ForMember(dest => dest.Bands, opt => opt.Ignore());*/
+		}
     }
 }

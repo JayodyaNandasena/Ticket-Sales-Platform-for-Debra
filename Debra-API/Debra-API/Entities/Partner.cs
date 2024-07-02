@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Debra_API.Entities
 {
@@ -30,6 +31,7 @@ namespace Debra_API.Entities
         [Required]
         public string Email { get; set; } = null!;
         public PartnerAccount Account { get; set; } = null!;
+        [JsonIgnore]
         public ICollection<Event> Events { get; } = [];
 
 

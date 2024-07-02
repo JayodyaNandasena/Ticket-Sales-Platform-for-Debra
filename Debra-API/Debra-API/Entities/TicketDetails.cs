@@ -5,13 +5,11 @@ using System.Text.Json.Serialization;
 
 namespace Debra_API.Entities
 {
-    public class Category
+    public class TicketDetails
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        //[Required]
-        //public string Name { get; set; } = null!;
         [Required]
         public decimal UnitPrice { get; set; }
         [Required]

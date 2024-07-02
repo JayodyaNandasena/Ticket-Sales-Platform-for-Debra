@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Debra-WebClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a81a6cf4e5c91c22f81199f4acd540b309b4ed89")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c0a57276eb94e2ae67ccea9ea1e4a091b492fd0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Debra-WebClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Debra-WebClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
