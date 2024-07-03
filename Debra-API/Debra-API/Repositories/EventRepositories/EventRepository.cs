@@ -34,6 +34,11 @@ namespace Debra_API.Repositories.EventRepositories
 			return _dbContext.Events.ToList();
 		}
 
+		public Event? GetById(int Id)
+		{
+			return _dbContext.Events.FirstOrDefault(e => e.Id == Id);
+		}
+
 		private bool Save()
         {
             return _dbContext.SaveChanges() > 0;

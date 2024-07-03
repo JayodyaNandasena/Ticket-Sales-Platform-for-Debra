@@ -2,9 +2,7 @@
 {
     public class Bands
     {
-        public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string ImageBase64 { get; set; } = null!;
-        public List<Events> Events { get; set; } = [];
     }
 }

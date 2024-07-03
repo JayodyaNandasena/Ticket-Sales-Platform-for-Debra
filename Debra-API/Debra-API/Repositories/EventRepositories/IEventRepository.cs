@@ -6,5 +6,6 @@ namespace Debra_API.Repositories.EventRepositories
     {
         Event? Add(Event newEvent);
         List<Event> GetAll();
-    }
+		Event? GetById(int Id);
+	}
 }

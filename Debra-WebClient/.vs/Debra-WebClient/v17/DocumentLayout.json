@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\debra-webclient\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-webclient\\debra-webclient\\model\\createevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\model\\createevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\debra-webclient\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-webclient\\debra-webclient\\model\\createtickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\model\\createtickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\debra-webclient\\pages\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\pages\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-webclient\\debra-webclient\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\debra-webclient\\pages\\addevent.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\pages\\addevent.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\debra-webclient\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\debra-webclient\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3F5D09DB-8AC9-434D-AD93-717E31F1CF18}|Debra-WebClient\\Debra-WebClient.csproj|solutionrelative:debra-webclient\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +34,33 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "CreateTickets.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Model\\CreateTickets.cs",
+              "RelativeDocumentMoniker": "Debra-WebClient\\Model\\CreateTickets.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Model\\CreateTickets.cs",
+              "RelativeToolTip": "Debra-WebClient\\Model\\CreateTickets.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T10:33:11.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateEvents.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Model\\CreateEvents.cs",
+              "RelativeDocumentMoniker": "Debra-WebClient\\Model\\CreateEvents.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Model\\CreateEvents.cs",
+              "RelativeToolTip": "Debra-WebClient\\Model\\CreateEvents.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAIwA4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T10:32:05.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Debra-WebClient\\Pages\\Index.cshtml",
@@ -46,33 +68,7 @@
               "RelativeToolTip": "Debra-WebClient\\Pages\\Index.cshtml",
               "ViewState": "AQIAACUAAAAAAAAAAAAuwDAAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-01T12:22:09.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Debra-WebClient\\wwwroot\\css\\site.css",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Debra-WebClient\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-07-01T12:18:42.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "site.js",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Debra-WebClient\\wwwroot\\js\\site.js",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Debra-WebClient\\wwwroot\\js\\site.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-01T12:03:13.143Z"
+              "WhenOpened": "2024-07-01T12:22:09.366Z"
             },
             {
               "$type": "Document",
@@ -82,34 +78,22 @@
               "RelativeDocumentMoniker": "Debra-WebClient\\Pages\\AddEvent.cshtml",
               "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Pages\\AddEvent.cshtml",
               "RelativeToolTip": "Debra-WebClient\\Pages\\AddEvent.cshtml",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAuwKsAAAB+AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAANQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-01T12:02:49.858Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AddEvent.cshtml.cs",
               "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Pages\\AddEvent.cshtml.cs",
               "RelativeDocumentMoniker": "Debra-WebClient\\Pages\\AddEvent.cshtml.cs",
               "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Pages\\AddEvent.cshtml.cs",
               "RelativeToolTip": "Debra-WebClient\\Pages\\AddEvent.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T12:02:46.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Debra-WebClient\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Debra-WebClient\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-01T12:00:52.268Z",
+              "WhenOpened": "2024-07-01T12:02:46.931Z",
               "EditorCaption": ""
             }
           ]

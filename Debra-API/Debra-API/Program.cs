@@ -1,7 +1,7 @@
 using Debra_API.Data;
 using Debra_API.Repositories.AdminAccountRepositories;
 using Debra_API.Repositories.BandRepository;
-using Debra_API.Repositories.CategoryRepositories;
+using Debra_API.Repositories.TicketDetailsRepositories;
 using Debra_API.Repositories.CustomerRepositories;
 using Debra_API.Repositories.EventRepositories;
 using Debra_API.Repositories.MusicianRepositories;
@@ -27,7 +27,7 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 builder.Services.AddScoped<IPartnerAccountRepository, PartnerAccountRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ITicketDetailsRepository, TicketDetailsRepository>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 builder.Services.AddScoped<IMusicianRepository, MusicianRepository>();
 builder.Services.AddScoped<IBandRepository, BandRepository>();

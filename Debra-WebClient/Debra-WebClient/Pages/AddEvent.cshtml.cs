@@ -8,13 +8,13 @@ namespace Debra_WebClient.Pages
     public class AddEventModel : PageModel
     {
         [BindProperty]
-        public Events newEvent { get; set; }
+        public CreateEvents newEvent { get; set; }
         public void OnGet()
         {
         }
         public IActionResult OnPostTickets()
         {
-            TempData["ShowTicketDetails"] = true;
+            
             return Page();
         }
     }

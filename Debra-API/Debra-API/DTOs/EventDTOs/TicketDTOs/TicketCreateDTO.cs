@@ -2,16 +2,9 @@
 {
     public class TicketCreateDTO
     {
-        public TicketCreateDTO(int eventId, int categoryId)
-        {
-            EventId = eventId;
-            CategoryId = categoryId;
-            IsSold = false;
-        }
-
         public string Id { get; set; } = null!;
-        public bool IsSold { get; set; }
+        public bool IsSold { get; set; } = false;
         public int EventId { get; set; }
-        public int CategoryId { get; set; }
+        public int DetailsId { get; set; }
     }
 }

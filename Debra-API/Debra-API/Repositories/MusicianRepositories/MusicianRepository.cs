@@ -27,6 +27,20 @@ namespace Debra_API.Repositories.MusicianRepositories
 			return true;
 		}
 
+		public List<Musician> GetByEvent(int eventId)
+		{
+			var musicians = _dbContext.Musicians
+						.Where(m => m.EventId == eventId)
+						.Select(m => new Musician
+						{
+							Name = m.Name,
+							Image = m.Image
+						})
+						.ToList();
+
+			return musicians;
+		}
+
 		private bool Save()
 		{
 			return _dbContext.SaveChanges() > 0;

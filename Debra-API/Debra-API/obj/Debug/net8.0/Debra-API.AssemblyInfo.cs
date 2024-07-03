@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Debra-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c0a57276eb94e2ae67ccea9ea1e4a091b492fd0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e586296cd3d2ceda2178f0305279cde5fcfafdd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Debra-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Debra-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

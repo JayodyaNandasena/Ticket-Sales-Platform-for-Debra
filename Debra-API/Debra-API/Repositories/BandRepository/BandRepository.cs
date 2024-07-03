@@ -27,6 +27,15 @@ namespace Debra_API.Repositories.BandRepository
 			return true;
 		}
 
+		public List<Band> GetByEvent(int eventId)
+		{
+			List<Band> bands = _dbContext.Bands
+				.Where(b  => b.EventId == eventId)
+				.ToList();
+
+			return bands;
+		}
+
 		private bool Save()
 		{
 			return _dbContext.SaveChanges() > 0;

@@ -12,16 +12,27 @@ namespace Debra_API.Repositories.TicketRepositories
             _dbContext = dbContext;
         }
 
-        public void addTickets(params Ticket[] tickets)
+        public bool AddTickets(List<Ticket> tickets)
         {
-            if (tickets == null || tickets.Length == 0)
+            if (tickets == null || tickets.Count == 0)
             {
                 throw new ArgumentException("At least one ticket must be provided.");
             }
             foreach (var ticket in tickets)
             {
                 _dbContext.Tickets.Add(ticket);
+
+                if (!Save())
+                {
+                    return false;
+                }
             }
+			return true;
+		}
+
+        private bool Save()
+        {
+            return _dbContext.SaveChanges() > 0;
         }
     }
 }

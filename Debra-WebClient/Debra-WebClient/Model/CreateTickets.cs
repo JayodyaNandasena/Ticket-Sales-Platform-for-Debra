@@ -1,6 +1,6 @@
-﻿namespace Debra_API.DTOs.EventDTOs.TicketDTOs
+﻿namespace Debra_WebClient.Model
 {
-    public class EventTicketCreateDTO
+    public class CreateTickets
     {
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }

@@ -5,5 +5,6 @@ namespace Debra_API.Repositories.BandRepository
 	public interface IBandRepository
 	{
 		bool Add(List<Band> bands);
+		List<Band> GetByEvent(int eventId);
 	}
 }

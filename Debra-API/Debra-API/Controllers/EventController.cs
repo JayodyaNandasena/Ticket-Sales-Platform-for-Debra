@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using Azure.Core;
 using Debra_API.DTOs;
-using Debra_API.DTOs.CustomerDTOs;
 using Debra_API.DTOs.EventDTOs;
 using Debra_API.DTOs.EventDTOs.TicketDTOs;
 using Debra_API.Entities;
 using Debra_API.Repositories.BandRepository;
-using Debra_API.Repositories.CategoryRepositories;
+using Debra_API.Repositories.TicketDetailsRepositories;
 using Debra_API.Repositories.EventRepositories;
 using Debra_API.Repositories.MusicianRepositories;
 using Debra_API.Repositories.PartnerRepositories;
@@ -22,76 +21,26 @@ namespace Debra_API.Controllers
 		private IMapper _mapper;
 		private IEventRepository _eventRepository;
 		private IPartnerRepository _partnerRepository;
-		private ICategoryRepository _categoryRepository;
+		private ITicketDetailsRepository _ticketDetailsRepository;
 		private ITicketRepository _ticketRepository;
 		private IMusicianRepository _musicianRepository;
 		private IBandRepository _bandRepository;
 
 		public EventController(IMapper mapper, IEventRepository eventRepository,
-			IPartnerRepository partnerRepository, ICategoryRepository categoryRepository,
+			IPartnerRepository partnerRepository, ITicketDetailsRepository ticketDetailsRepository,
 			ITicketRepository ticketRepository, IMusicianRepository musicianRepository,
 			IBandRepository bandRepository)
 		{
 			_mapper = mapper;
 			_eventRepository = eventRepository;
 			_partnerRepository = partnerRepository;
-			_categoryRepository = categoryRepository;
+			_ticketDetailsRepository = ticketDetailsRepository;
 			_ticketRepository = ticketRepository;
 			_musicianRepository = musicianRepository;
 			_bandRepository = bandRepository;
 		}
 
-		/*[HttpPost]
-        public IActionResult AddNewEvent([FromBody] EventCreateDTO request)
-        {
-			Event createEntity = _mapper.Map<Event>(request);
-
-            createEntity.Partner = _partnerRepository.GetById(request.PartnerId);
-
-			Event? readEntity = _eventRepository.Add(createEntity);
-
-            
-
-			EventReadDTO eventReadDTO = _mapper.Map<EventReadDTO>(readEntity);
-
-			List<Musician> musicians = new List<Musician>();
-			foreach (var musician in request.Musicians)
-			{
-				Musician entity = _mapper.Map<Musician>(musician);
-                entity.EventId = eventReadDTO.Id;
-				musicians.Add(entity);
-			}
-			_musicianRepository.Add(musicians);
-
-			List<Band> bands = new List<Band>();
-			foreach (var band in request.Bands)
-			{
-				Band entity = _mapper.Map<Band>(band);
-				entity.EventId = eventReadDTO.Id;
-				bands.Add(entity);
-			}
-			_bandRepository.Add(bands);
-
-            List<BandDTO> bandDTOs = new List<BandDTO>();
-
-            foreach (var band in bands)
-            {
-                bandDTOs.Add(_mapper.Map<BandDTO>(band));
-            }
-
-            eventReadDTO.Bands = bandDTOs;
-
-			List<MusicianDTO> musicianDTOs = new List<MusicianDTO>();
-
-			foreach (var musician in musicians)
-			{
-				musicianDTOs.Add(_mapper.Map<MusicianDTO>(musician));
-			}
-
-			eventReadDTO.Musicians = musicianDTOs;
-
-			return Ok(eventReadDTO);
-		}*/
+		
 		[HttpPost]
 		public IActionResult AddNewEvent([FromBody] EventCreateDTO request)
 		{
@@ -100,53 +49,93 @@ namespace Debra_API.Controllers
 
 			Partner? partner = _partnerRepository.GetById(request.PartnerId);
 
-			if (partner != null)
+			if (partner == null)
 			{
-				createEntity.Partner = partner;
-
-				// Add the Event entity to the repository and map the result to EventReadDTO
-				Event? readEntity = _eventRepository.Add(createEntity);
-				EventReadDTO eventReadDTO = _mapper.Map<EventReadDTO>(readEntity);
-
-				// Map, set EventId, and add musicians to the repository
-				var musicians = request.Musicians.Select(musician =>
-				{
-					var entity = _mapper.Map<Musician>(musician);
-					entity.EventId = eventReadDTO.Id;
-					return entity;
-				}).ToList();
-				_musicianRepository.Add(musicians);
-
-				// Map, set EventId, and add bands to the repository
-				var bands = request.Bands.Select(band =>
-				{
-					var entity = _mapper.Map<Band>(band);
-					entity.EventId = eventReadDTO.Id;
-					return entity;
-				}).ToList();
-				_bandRepository.Add(bands);
-
-				// Map bands and musicians to their respective DTOs
-				eventReadDTO.Bands = bands.Select(band => _mapper.Map<BandDTO>(band)).ToList();
-				eventReadDTO.Musicians = musicians.Select(musician => _mapper.Map<MusicianDTO>(musician)).ToList();
-
-				// Return the complete EventReadDTO
-				return Ok(
-					new OperationResultResponseDTO<EventReadDTO>
-						{
-							Status = Status.Success,
-							Result = eventReadDTO
-						}
-				);
-			}
-			
-			return Ok(
-					new OperationResultResponseDTO<string>
+				return Ok( new OperationResultResponseDTO<string>
 					{
 						Status = Status.Failed,
 						Result = "Partner Not Found"
 					}
 				);
+			}
+
+			createEntity.Partner = partner;
+
+			// Add the Event entity to the repository and map the result to EventReadDTO
+			Event? readEntity = _eventRepository.Add(createEntity);
+			EventReadDTO eventReadDTO = _mapper.Map<EventReadDTO>(readEntity);
+
+			// Map, set EventId, and add musicians to the repository
+			var musicians = request.Musicians.Select(musician =>
+			{
+				var entity = _mapper.Map<Musician>(musician);
+				entity.EventId = eventReadDTO.Id;
+				return entity;
+			}).ToList();
+			_musicianRepository.Add(musicians);
+
+			// Map, set EventId, and add bands to the repository
+			var bands = request.Bands.Select(band =>
+			{
+				var entity = _mapper.Map<Band>(band);
+				entity.EventId = eventReadDTO.Id;
+				return entity;
+			}).ToList();
+			_bandRepository.Add(bands);
+
+			// Map bands and musicians to their respective DTOs
+			eventReadDTO.Bands = bands.Select(_mapper.Map<BandDTO>).ToList();
+			eventReadDTO.Musicians = musicians.Select(_mapper.Map<MusicianDTO>).ToList();
+
+			if (request.Tickets != null)
+			{
+				TicketDetails ticketDetailsEntity = 
+					_mapper.Map<TicketDetails>(request.Tickets);
+
+				int detailId = _ticketDetailsRepository.Add(ticketDetailsEntity);
+
+				if (detailId == 0)
+				{
+					return Ok( new OperationResultResponseDTO<string>
+						{
+							Status = Status.Failed,
+							Result = "Error adding ticket details"
+						}
+					);
+				}
+
+				int numberOfDigits = request.Tickets.Quantity.ToString().Length;
+				List<Ticket> ticketList = new List<Ticket>();
+
+				for (int i = 1; i <= request.Tickets.Quantity; i++)
+				{
+					var ticketCreateDTO = new TicketCreateDTO
+					{
+						EventId = eventReadDTO.Id,
+						DetailsId = detailId,
+						Id = $"TKT-{eventReadDTO.Id}-{i.ToString($"D{numberOfDigits}")}"
+					};
+
+					ticketList.Add(_mapper.Map<Ticket>(ticketCreateDTO));
+				}
+
+				if (!_ticketRepository.AddTickets(ticketList))
+				{
+					return Ok( new OperationResultResponseDTO<string>
+						{
+							Status = Status.Failed,
+							Result = "Error adding tickets"
+						}
+					);
+				}
+			}
+
+			return Ok(new OperationResultResponseDTO<EventReadDTO>
+				{
+					Status = Status.Success,
+					Result = eventReadDTO
+				}
+			);
 		}
 
 
@@ -155,37 +144,103 @@ namespace Debra_API.Controllers
 		{
 			List<Event> allEvents = _eventRepository.GetAll();
 
-			List<EventReadDTO> result = new List<EventReadDTO>();
+			List<EventReadDTO> results = new List<EventReadDTO>();
 
 			foreach (Event item in allEvents)
 			{
 				Partner? partner = _partnerRepository.GetById(item.PartnerId);
 
+				if (partner == null)
+				{
+					return Ok("Invalid Partner");
+				}
+
 				item.Partner = partner;
 
-				result.Add(
-					_mapper.Map<EventReadDTO>(item)
-					);
+				EventReadDTO eventReadDTO = _mapper.Map<EventReadDTO>(item);
+
+				List<Musician> musicians = _musicianRepository.GetByEvent(item.Id);
+				List<MusicianDTO> musicianDTOs = [];
+
+                foreach (var musician in musicians)
+                {
+					musicianDTOs.Add(_mapper.Map<MusicianDTO>(musician));
+                }
+
+				List<Band> bands = _bandRepository.GetByEvent(item.Id);
+				List<BandDTO> bandDTOs = [];
+
+				foreach (var band in bands)
+				{
+					bandDTOs.Add(_mapper.Map<BandDTO>(band));
+				}
+
+
+				eventReadDTO.Musicians = musicianDTOs;
+				eventReadDTO.Bands = bandDTOs;
+				results.Add(eventReadDTO);
+
 			}
 
-			return Ok(result);
+			return Ok(results);
 		}
 
-		private void addTicketCategory(CategoryDTO categoryDTO, int eventId, int Quantity)
+		[HttpGet("ById")]
+		public ActionResult GetById([FromQuery] int Id)
 		{
-			addTickets(Quantity, eventId,
-				_categoryRepository.add(_mapper.Map<TicketDetails>(categoryDTO))
-				);
+			Event foundEvent = _eventRepository.GetById(Id);
 
-		}
+            if (foundEvent is null)
+            {
+				return Ok(new OperationResultResponseDTO<string>
+				{
+					Status = Status.Failed,
+					Result = "Event not found"
+				});
+            }
 
-		private void addTickets(int Quantity, int eventId, int categoryId)
-		{
-			for (int i = 0; i < Quantity; i++)
+
+			Partner? partner = _partnerRepository.GetById(foundEvent.PartnerId);
+
+			if (partner == null)
 			{
-				TicketCreateDTO ticketCreateDTO = new TicketCreateDTO(eventId, categoryId);
-				_ticketRepository.addTickets(_mapper.Map<Ticket>(ticketCreateDTO));
+				return Ok(new OperationResultResponseDTO<string>
+				{
+					Status = Status.Failed,
+					Result = "Partner not found"
+				});
 			}
+
+			foundEvent.Partner = partner;
+
+			EventReadDTO eventReadDTO = _mapper.Map<EventReadDTO>(foundEvent);
+
+			List<Musician> musicians = _musicianRepository.GetByEvent(foundEvent.Id);
+			List<MusicianDTO> musicianDTOs = [];
+
+			foreach (var musician in musicians)
+			{
+				musicianDTOs.Add(_mapper.Map<MusicianDTO>(musician));
+			}
+
+			List<Band> bands = _bandRepository.GetByEvent(foundEvent.Id);
+			List<BandDTO> bandDTOs = [];
+
+			foreach (var band in bands)
+			{
+				bandDTOs.Add(_mapper.Map<BandDTO>(band));
+			}
+
+
+			eventReadDTO.Musicians = musicianDTOs;
+			eventReadDTO.Bands = bandDTOs;
+
+			return Ok(new OperationResultResponseDTO<EventReadDTO>
+			{
+				Status = Status.Success,
+				Result = eventReadDTO
+			});
 		}
+
 	}
 }

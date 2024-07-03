@@ -72,21 +72,28 @@
 
                 <div class="form-group row mb-3">
                     <div class="col-6">
-                        <h4 class="add-event-heading">Select Musician/s</h4>
-                        <label class="form-label text-white col-3">Name</label>
-                        <div class="col-9">
-                            <select class="form-select bg-dark text-white" aria-label="Default select example" required>
-                                <option selected>Open this menu to Select or Add New Musicians</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                <option value="+_Add_New">+ Add New Musician</option>
-                            </select>
+                        <h4 class="add-event-heading">Add a Musician</h4>
+                        <div class="form-group row mb-3">
+                            <label class="form-label text-white col-3">Name</label>
+                            <div class="col-9">
+                                <input asp-for="newEvent.ImageBase64" class="form-control"
+                                       type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label class="form-label text-white col-3">Image</label>
+                            <div class="col-9">
+                                <input asp-for="newEvent.ImageBase64" class="form-control"
+                                       type="file" id="formFile" accept="image/*" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end mb-3">
+                            <button class="btn btn-next col-3 mx-2">Add</button>
                         </div>
                     </div>
 
                     <div class="col-6">
-                        <h4 class="add-event-heading">Selected Musician/s</h4>
+                        <h4 class="add-event-heading">Added Musician/s</h4>
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr>
@@ -114,7 +121,6 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
 
                 <div class="col-12">
@@ -123,21 +129,28 @@
 
                 <div class="form-group row mb-3">
                     <div class="col-6">
-                        <h4 class="add-event-heading">Select Band/s</h4>
-                        <label class="form-label text-white col-3">Name</label>
-                        <div class="col-9">
-                            <select class="form-select bg-dark text-white" aria-label="Default select example" required>
-                                <option selected>Open this menu to Select or Add New Bands</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                <option value="+_Add_New">+ Add New Band</option>
-                            </select>
+                        <h4 class="add-event-heading">Add a Band</h4>
+                        <div class="form-group row mb-3">
+                            <label class="form-label text-white col-3">Name</label>
+                            <div class="col-9">
+                                <input asp-for="newEvent.ImageBase64" class="form-control"
+                                       type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label class="form-label text-white col-3">Image</label>
+                            <div class="col-9">
+                                <input asp-for="newEvent.ImageBase64" class="form-control"
+                                       type="file" id="formFile" accept="image/*" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end mb-3">
+                            <button class="btn btn-next col-3 mx-2">Add</button>
                         </div>
                     </div>
 
                     <div class="col-6">
-                        <h4 class="add-event-heading">Selected Band/s</h4>
+                        <h4 class="add-event-heading">Added Band/s</h4>
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr>
@@ -167,31 +180,6 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
-					<button type="button" onclick="showTicketDetails()" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
-                    <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 mx-5 rounded-pill effect effect-1" asp-page-handler="Tickets" />
-                </div>
-            </form>
-        </div>
-	</div>
-</div>
-
-<div class="ticket-details">
-    <div class="row text-center">
-        <div class="col">
-            <span class="text-white-50"><b>Event Details</b></span>
-        </div>
-        <div class="col">
-            <span class="text-white"><b>Ticket Details</b></span>
-        </div>
-        <div class="col">
-            <span class="text-white-50"><b>Summary</b></span>
-        </div>
-    </div>
-
-    <div class="container m-5 mt-3">
-        <div class="row text-start">
-			<form action="/" method="post">
                 <div class="col-12">
                     <h2 class="mb-4 add-event-heading">Add Ticket Details</h2>
                 </div>
@@ -199,22 +187,18 @@
                 <table class="table table-dark table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">Ticket Type</th>
-                            <th scope="col">Quanttity</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Commision</th>
+                            <th scope="col">Number of Tickets</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Commision per Ticket</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">
-                                <input type="text" asp-for="newEvent.Tickets" class="form-control" required>
-                            </th>
-                            <th scope="row">
                                 <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step="1" required>
                             </th>
                             <th scope="row">
-								<input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
+                                <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
                             </th>
                             <th scope="row">
                                 <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
@@ -223,26 +207,15 @@
                     </tbody>
                 </table>
 
-                <div class="col-12">
-                    <h6 class="mb-4 more-ticket-types py-3">Add More</h6>
-                </div>
-
-
-
-
-
-
-            
-
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
-                    <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 mx-5 rounded-pill" asp-page-handler="Add" />
+					<button type="button" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
+                    <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 
+                        mx-5 rounded-pill effect effect-1" asp-page-handler="Tickets" />
                 </div>
-            
             </form>
-
         </div>
-    </div>
+	</div>
 </div>
+
 
 

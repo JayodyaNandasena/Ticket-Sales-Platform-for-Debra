@@ -4,6 +4,6 @@ namespace Debra_API.Repositories.TicketRepositories
 {
     public interface ITicketRepository
     {
-        void addTickets(params Ticket[] tickets);
+        bool AddTickets(List<Ticket> tickets);
     }
 }

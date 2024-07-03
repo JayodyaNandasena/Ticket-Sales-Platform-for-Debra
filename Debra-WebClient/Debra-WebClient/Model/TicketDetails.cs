@@ -1,6 +1,6 @@
 ﻿namespace Debra_WebClient.Model
 {
-    public class Categories
+    public class TicketDetails
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
