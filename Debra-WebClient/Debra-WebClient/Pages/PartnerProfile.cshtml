@@ -1,0 +1,61 @@
+﻿@page
+@model Debra_WebClient.Pages.PartnerProfileModel
+@{
+}
+
+<div class="container-fluid background-2 p-5 align-items-center">
+    <form>
+        <div class="row profile-card p-5">
+            <div class="col-md-6">
+                <h1>John Doe <span>Individual Partner</span></h1>
+
+                <h2 class="mb-3">User Info</h2>
+                <div class="form-group mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" value="John Doe" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" value="JohnDoe" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" value="johndoe@example.com" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Partner Type</label>
+                    <select class="form-select">
+                        <option>Individual</option>
+                        <option>Business</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary ms-auto">Save Changes</button>
+                        <button type="button" class="btn btn-secondary ms-2">Discard</button>
+                    </div>
+                </div>
+                <h2 class="mb-3">Account Info</h2>
+                <div class="form-group mb-3">
+                    <label for="registeredDate">Registered Date</label>
+                    <input type="date" class="form-control" id="registeredDate" value="2020-10-06" disabled>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="oldPassword">Old Password</label>
+                    <input type="password" class="form-control" id="oldPassword" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</div>

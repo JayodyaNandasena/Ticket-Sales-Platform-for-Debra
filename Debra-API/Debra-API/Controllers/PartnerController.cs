@@ -29,7 +29,7 @@ namespace Debra_API.Controllers
 
 
         [HttpPost]
-        public IActionResult Add(PartnerDTO partnerDTO)
+        public IActionResult Add([FromBody] PartnerDTO partnerDTO)
         {
             //check for username duplication
 

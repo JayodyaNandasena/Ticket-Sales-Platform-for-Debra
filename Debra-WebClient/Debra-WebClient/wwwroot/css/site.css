@@ -15,11 +15,12 @@
 html {
   position: relative;
   min-height: 100%;
+  padding: 0;
 }
 
 body {
     top: 0;
-    margin-bottom: 60px;
+    padding: 0;
     font-family: 'Inter', sans-serif;
 }
 
@@ -36,6 +37,11 @@ main {
     z-index: 900;
     left: 0;
     right: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #1C2AA3;
 }
 
 /* --- CSS for index page --- */
@@ -60,8 +66,57 @@ main {
     opacity: 0.5;
 }
 
+
+/*CSS for registration and sign in pages*/
+.background-2 {
+    background-image: linear-gradient(#909AF2, #1C2AA3);
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background.png');
+    background-size: cover; 
+    background-position: center;
+    opacity: 1;
+    z-index: 1;
+}
+
+.register-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sign-in-text {
+    color: #F5167E;
+}
+
+/*CSS for partner profile page*/
+.profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 /* --- CSS for add event page --- */
-.event-details{
+.event-details {
     margin-top: 80px;
 }
 

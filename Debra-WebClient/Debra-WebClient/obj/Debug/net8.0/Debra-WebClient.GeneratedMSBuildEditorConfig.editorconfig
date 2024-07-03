@@ -30,12 +30,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/PartnerProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydG5lclByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbkluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Projects/.NET/Debra-SOC_assignment/Debra-WebClient/Debra-WebClient/Pages/_ViewImports.cshtml]

@@ -1,0 +1,32 @@
+﻿@page
+@model Debra_WebClient.Pages.RegisterModel
+@{
+}
+
+<div class="container-fluid background-2 p-5 align-items-center">
+	<div class="register-card my-5 p-5">
+        <h2 class="text-center mb-3">Register as a Partner</h2>
+        <form>
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="accountType" id="individual" value="individual" asp-for="newPartner.Type" checked>
+                    <label class="form-check-label" for="individual">Individual</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="accountType" id="business" value="business" asp-for="newPartner.Type">
+                    <label class="form-check-label" for="business">Business</label>
+                </div>
+            </div>
+            <input type="text" class="form-control mb-3" placeholder="Name" asp-for="newPartner.Name" required>
+            <input type="email" class="form-control mb-3" placeholder="Email" asp-for="newPartner.Email" required>
+            <input type="text" class="form-control mb-3" placeholder="Username" asp-for="newPartner.Account.Username" required>
+            <input type="password" class="form-control mb-3" placeholder="Password" asp-for="newPartner.Account.Password" required>
+            
+            <button type="submit" class="btn btn-next w-100 mb-3">Register</button>
+
+            <div class="text-center mb-3">
+                <span>Already have an account? <a asp-page="/SignIn" class="sign-in-text">Sign In</a></span>
+            </div>
+        </form>
+	</div>
+</div>

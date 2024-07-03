@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\eventdtos\\ticketdtos\\eventticketcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\eventdtos\\ticketdtos\\eventticketcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\controllers\\partnercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\controllers\\partnercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\eventdtos\\eventcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\eventdtos\\eventcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\operationresultresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\operationresultresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\repositories\\eventrepositories\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\repositories\\eventrepositories\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\repositories\\eventrepositories\\ieventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\repositories\\eventrepositories\\ieventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|e:\\projects\\.net\\debra-soc_assignment\\debra-api\\debra-api\\dtos\\partnerdtos\\partnerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B31C3229-CA7B-4D38-9F88-D71A101BFB0F}|Debra-API\\Debra-API.csproj|solutionrelative:debra-api\\dtos\\partnerdtos\\partnerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,79 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EventTicketCreateDTO.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\EventDTOs\\TicketDTOs\\EventTicketCreateDTO.cs",
-              "RelativeDocumentMoniker": "Debra-API\\DTOs\\EventDTOs\\TicketDTOs\\EventTicketCreateDTO.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\EventDTOs\\TicketDTOs\\EventTicketCreateDTO.cs",
-              "RelativeToolTip": "Debra-API\\DTOs\\EventDTOs\\TicketDTOs\\EventTicketCreateDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA3AAAA",
+              "Title": "PartnerController.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\PartnerController.cs",
+              "RelativeDocumentMoniker": "Debra-API\\Controllers\\PartnerController.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\PartnerController.cs",
+              "RelativeToolTip": "Debra-API\\Controllers\\PartnerController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAIwEcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T10:33:25.072Z",
+              "WhenOpened": "2024-07-03T14:16:06.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EventCreateDTO.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\EventDTOs\\EventCreateDTO.cs",
-              "RelativeDocumentMoniker": "Debra-API\\DTOs\\EventDTOs\\EventCreateDTO.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\EventDTOs\\EventCreateDTO.cs",
-              "RelativeToolTip": "Debra-API\\DTOs\\EventDTOs\\EventCreateDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T10:31:37.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OperationResultResponseDTO.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\OperationResultResponseDTO.cs",
-              "RelativeDocumentMoniker": "Debra-API\\DTOs\\OperationResultResponseDTO.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\OperationResultResponseDTO.cs",
-              "RelativeToolTip": "Debra-API\\DTOs\\OperationResultResponseDTO.cs",
+              "Title": "PartnerDTO.cs",
+              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "RelativeDocumentMoniker": "Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
+              "RelativeToolTip": "Debra-API\\DTOs\\PartnerDTOs\\PartnerDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T09:40:42.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EventRepository.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\EventRepositories\\EventRepository.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Repositories\\EventRepositories\\EventRepository.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\EventRepositories\\EventRepository.cs",
-              "RelativeToolTip": "Debra-API\\Repositories\\EventRepositories\\EventRepository.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAIwCYAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T09:38:15.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IEventRepository.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\EventRepositories\\IEventRepository.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Repositories\\EventRepositories\\IEventRepository.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Repositories\\EventRepositories\\IEventRepository.cs",
-              "RelativeToolTip": "Debra-API\\Repositories\\EventRepositories\\IEventRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T09:37:51.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EventController.cs",
-              "DocumentMoniker": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\EventController.cs",
-              "RelativeDocumentMoniker": "Debra-API\\Controllers\\EventController.cs",
-              "ToolTip": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-API\\Debra-API\\Controllers\\EventController.cs",
-              "RelativeToolTip": "Debra-API\\Controllers\\EventController.cs",
-              "ViewState": "AQIAANIAAAAAAAAAAAAAAO8AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T13:12:15.253Z",
+              "WhenOpened": "2024-07-03T14:15:37.573Z",
               "EditorCaption": ""
             }
           ]

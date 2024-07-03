@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gSof+CJo5uDQPJfwcoTGDGvwCrOkVYkQ5Xs3tWN3id8=",
+  "Hash": "uSqYMtinKJWt93oFZ7c2nsxn8Cheet/aKaKjFfIRzPM=",
   "Source": "Debra-WebClient",
   "BasePath": "_content/Debra-WebClient",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\background.png",
+      "SourceId": "Debra-WebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\",
+      "BasePath": "_content/Debra-WebClient",
+      "RelativePath": "img/background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\background.png"
     },
     {
       "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\concert-image.png",
