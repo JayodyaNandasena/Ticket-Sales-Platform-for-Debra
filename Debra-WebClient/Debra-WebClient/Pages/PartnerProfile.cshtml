@@ -3,59 +3,65 @@
 @{
 }
 
-<div class="container-fluid background-2 p-5 align-items-center">
-    <form>
-        <div class="row profile-card p-5">
-            <div class="col-md-6">
-                <h1>John Doe <span>Individual Partner</span></h1>
-
-                <h2 class="mb-3">User Info</h2>
-                <div class="form-group mb-3">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" value="John Doe" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" value="JohnDoe" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" value="johndoe@example.com" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="email">Partner Type</label>
-                    <select class="form-select">
-                        <option>Individual</option>
-                        <option>Business</option>
-                    </select>
-                </div>
+<div class="container-fluid background-2 m-0 pt-5">
+	<div class="p-4 text-light profile-card">
+        <div class="row mb-3 align-items-center">
+            <div class="col-3 text-start align-items-center">
+                <h2>John Doe</h2>
             </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary ms-auto">Save Changes</button>
-                        <button type="button" class="btn btn-secondary ms-2">Discard</button>
-                    </div>
-                </div>
-                <h2 class="mb-3">Account Info</h2>
-                <div class="form-group mb-3">
-                    <label for="registeredDate">Registered Date</label>
-                    <input type="date" class="form-control" id="registeredDate" value="2020-10-06" disabled>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="oldPassword">Old Password</label>
-                    <input type="password" class="form-control" id="oldPassword" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="newPassword">New Password</label>
-                    <input type="password" class="form-control" id="newPassword" required>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="confirmPassword">Confirm New Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" required>
-                </div>
+            <div class="col-3 text-end align-items-center">
+                <p class="text-white-50">Individual partner</p>
+            </div>
+            <div class="col text-end">
+                <button class="btn btn-next">Save Changes</button>
+                <button class="btn btn-cancel">Discard</button>
             </div>
         </div>
-        
-    </form>
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>User info</h4>
+                    <p class="d-none">1</p>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" value="John Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" value="johndoe@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="registeredDate" class="form-label">Registered Date</label>
+                        <input type="date" class="form-control" id="registeredDate" value="10/06/2024" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="partnerType" class="form-label">Partner Type</label>
+                        <select class="form-select" id="partnerType">
+                            <option value="individual" selected>Individual</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Account info</h4>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" value="JohnDoe"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="oldPassword" class="form-label">Old Password</label>
+                        <input type="password" class="form-control" id="oldPassword"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm new Password</label>
+                        <input type="password" class="form-control" id="confirmPassword"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
