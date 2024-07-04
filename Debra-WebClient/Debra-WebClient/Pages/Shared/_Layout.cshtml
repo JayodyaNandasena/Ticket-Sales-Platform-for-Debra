@@ -11,7 +11,7 @@
 </head>
 <body class="bg-black">
 	<header class="bg-transparent">
-		<nav class="navbar bg-transparent navbar-expand-sm navbar-toggleable-sm px-5" data-bs-theme="dark">
+		<nav class="navbar bg-transparent navbar-expand-sm navbar-toggleable-sm px-5 mx-0" data-bs-theme="dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" asp-area="" asp-page="/Index" data-bs-theme="dark">Debra</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,7 +30,7 @@
 							<a class="nav-link text-light" asp-area="" asp-page="/PartnerProfile">About Us</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-light" asp-area="" asp-page="/Privacy">Contact Us</a>
+							<a class="nav-link text-light" asp-area="" asp-page="/ViewEvent">Contact Us</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link text-light" asp-area="" asp-page="/SignIn">Login</a>
@@ -46,7 +46,7 @@
 		</nav>
 	</header>
 
-	<div class="container-fluid render-body">
+	<div class="container-fluid render-body p-0">
 		<main role="main" class="pb-3 px-0 mx-0">
 			@RenderBody()
 		</main>

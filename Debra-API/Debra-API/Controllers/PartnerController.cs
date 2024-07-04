@@ -136,7 +136,7 @@ namespace Debra_API.Controllers
 
             if (partnerAccount.Password == partnerAccountDTO.Password)
             {
-                Partner partner = _partnerRepository.GetById(partnerAccount.Partner.Id);
+                Partner partner = _partnerRepository.GetById(partnerAccount.PartnerId);
 
                 PartnerDTO partnerDTO = _mapper.Map<PartnerDTO>(partner);
 
