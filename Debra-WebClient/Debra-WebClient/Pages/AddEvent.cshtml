@@ -19,7 +19,7 @@
 
 	<div class="container m-5 mt-3">
         <div class="row text-start">
-            <form action="/" method="post">
+            <form method="post">
                 <div class="col-12">
                     <h2 class="mb-4 add-event-heading">Add Event Details</h2>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="form-group row mb-3">
                     <label class="form-label text-white col-3">Image</label>
                     <div class="col-9">
-                        <input asp-for="newEvent.ImageBase64" class="form-control"
+                        <input asp-for="EventImage" class="form-control"
                                type="file" id="formFile" accept="image/*" required>
                     </div>
                 </div>
@@ -76,19 +76,17 @@
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Name</label>
                             <div class="col-9">
-                                <input asp-for="newEvent.ImageBase64" class="form-control"
-                                       type="text" required>
+                                <input class="form-control" type="text" id="musicianName" asp-for="MusicianName" required>
                             </div>
                         </div>
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Image</label>
                             <div class="col-9">
-                                <input asp-for="newEvent.ImageBase64" class="form-control"
-                                       type="file" id="formFile" accept="image/*" required>
+                                <input class="form-control" type="file" id="formFile" accept="image/*" asp-for="MusicianImage" required>
                             </div>
                         </div>
                         <div class="row justify-content-end mb-3">
-                            <button class="btn btn-next col-3 mx-2">Add</button>
+							<button class="btn btn-next col-3 mx-2">Add</button>
                         </div>
                     </div>
 
@@ -97,27 +95,12 @@
                         <table class="table table-hover table-dark">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Image</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry the Bird</td>
-                                    <td>Thornton</td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -133,14 +116,14 @@
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Name</label>
                             <div class="col-9">
-                                <input asp-for="newEvent.ImageBase64" class="form-control"
+                                <input asp-for="BandName" class="form-control"
                                        type="text" required>
                             </div>
                         </div>
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Image</label>
                             <div class="col-9">
-                                <input asp-for="newEvent.ImageBase64" class="form-control"
+                                <input asp-for="BandImage" class="form-control"
                                        type="file" id="formFile" accept="image/*" required>
                             </div>
                         </div>
@@ -160,21 +143,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry the Bird</td>
-                                    <td>Thornton</td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -195,13 +164,13 @@
                     <tbody>
                         <tr>
                             <th scope="row">
-                                <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step="1" required>
+                                <input type="number" asp-for="newEvent.Tickets.Quantity" class="form-control" min="0" value="0" step="1" required>
                             </th>
                             <th scope="row">
-                                <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
+                                <input type="number" asp-for="newEvent.Tickets.UnitPrice" class="form-control" min="0" value="0" step=".01" required>
                             </th>
                             <th scope="row">
-                                <input type="number" asp-for="newEvent.Tickets" class="form-control" min="0" value="0" step=".01" required>
+                                <input type="number" asp-for="newEvent.Tickets.CommisionPerTicket" class="form-control" min="0" value="0" step=".01" required>
                             </th>
                         </tr>
                     </tbody>
@@ -210,12 +179,14 @@
                 <div class="d-flex justify-content-center">
 					<button type="button" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
                     <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 
-                        mx-5 rounded-pill effect effect-1" asp-page-handler="Tickets" />
+                        mx-5 rounded-pill effect effect-1" asp-page-handler="Create" />
                 </div>
             </form>
         </div>
 	</div>
 </div>
+
+
 
 
 

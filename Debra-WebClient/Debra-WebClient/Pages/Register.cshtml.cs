@@ -1,8 +1,6 @@
-using Debra_API.DTOs;
 using Debra_WebClient.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Security.Principal;
 using System.Text;
 using System.Text.Json;
 
@@ -12,10 +10,6 @@ namespace Debra_WebClient.Pages
     {
         [BindProperty]
         public Partners newPartner { get; set; }
-        [BindProperty]
-        public string username { get; set; }
-        [BindProperty]
-        public string password { get; set; }
 
 
 

@@ -1,7 +1,20 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
+
+// Add session services
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true; // HttpOnly attribute
+    options.Cookie.IsEssential = true; // Essential for session handling
+});
 
 var app = builder.Build();
 
@@ -19,6 +32,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Use session middleware
+app.UseSession();
 
 app.MapRazorPages();
 

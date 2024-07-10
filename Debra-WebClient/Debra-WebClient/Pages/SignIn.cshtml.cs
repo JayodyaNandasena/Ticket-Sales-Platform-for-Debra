@@ -1,4 +1,5 @@
 using Debra_WebClient.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text;
@@ -34,11 +35,23 @@ namespace Debra_WebClient.Pages
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToPage("Index");
+					var reply = await response.Content
+                        .ReadFromJsonAsync<OperationResultResponse<Partners>>();
+
+                    if (reply.Status == Status.Success)
+                    {
+                        Partners loggedPartner = reply.Result;
+                        HttpContext.Session.SetInt32("PartnerId", loggedPartner.Id);
+                        return RedirectToPage("Index");
+                    }
                 }
             }
+            // Display error toast message using Bootstrap
+            TempData["ErrorMessage"] = "Invalid credentials or server error.";
 
-            throw new Exception($"Failed to create partner");
+            // Redirect to login page or handle as needed
+            return RedirectToPage("SignIn");
+            //throw new Exception($"Failed to sign In");
 
         }
     }

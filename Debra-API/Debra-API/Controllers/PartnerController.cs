@@ -118,6 +118,36 @@ namespace Debra_API.Controllers
             return Ok(foundResponse);
         }
 
+        [HttpGet("ById")]
+        public ActionResult GetById([FromQuery] int id)
+        {
+            var partner = _partnerRepository.GetById(id);
+
+            if (partner is null)
+            {
+                var notFoundResponse = new OperationResultResponseDTO<string>
+                {
+                    Status = Status.Failed,
+                    Result = "Not Found"
+                };
+                return NotFound(notFoundResponse);
+            }
+
+            PartnerDTO partnerDTO = _mapper.Map<PartnerDTO>(partner);
+
+            PartnerAccount? partnerAccount = _partnerAccountRepository.findById(partnerDTO.Id);
+
+            partnerDTO.Account = _mapper.Map<PartnerAccountDTO>(partnerAccount);
+
+            var foundResponse = new OperationResultResponseDTO<PartnerDTO>
+            {
+                Status = Status.Success,
+                Result = partnerDTO
+            };
+
+            return Ok(foundResponse);
+        }
+
         [HttpPost("ValidateLogin")]
         public ActionResult ValidateLogin(PartnerAccountDTO partnerAccountDTO)
         {

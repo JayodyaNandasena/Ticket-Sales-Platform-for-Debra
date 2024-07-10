@@ -7,10 +7,10 @@
 	<div class="p-4 text-light profile-card">
         <div class="row mb-3 align-items-center">
             <div class="col-3 text-start align-items-center">
-                <h2>John Doe</h2>
+                <h2>@Model.Partner.Name</h2>
             </div>
             <div class="col-3 text-end align-items-center">
-                <p class="text-white-50">Individual partner</p>
+                <p class="text-white-50"><span>@Model.Partner.Type</span> partner</p>
             </div>
             <div class="col text-end">
                 <button class="btn btn-next">Save Changes</button>
@@ -21,36 +21,42 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4>User info</h4>
-                    <p class="d-none">1</p>
+                    <p class="" id="partner-id" value="@Model.PartnerId"></p>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" value="John Doe">
+                        <input type="text" class="form-control" id="name" value="@Model.Partner.Name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" value="johndoe@example.com">
+                        <input type="email" class="form-control" id="email" value="@Model.Partner.Email">
                     </div>
                     <div class="mb-3">
                         <label for="registeredDate" class="form-label">Registered Date</label>
-                        <input type="date" class="form-control" id="registeredDate" value="10/06/2024" readonly>
+                        <input type="date" class="form-control" id="registeredDate" value="@Model.Partner.RegisteredDate.ToString("yyyy-MM-dd")" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="partnerType" class="form-label">Partner Type</label>
                         <select class="form-select" id="partnerType">
-                            <option value="individual" selected>Individual</option>
+                            <option value="individual">Individual</option>
                             <option value="business">Business</option>
                         </select>
+						<!--
+                        <select class="form-select" id="partnerType" name="PartnerType">
+                            <option value="individual" @(Model.Partner.Type == "individual" ? "selected" : "")>Individual</option>
+                            <option value="business" @(Model.Partner.Type == "business" ? "selected" : "")>Business</option>
+						</select>
+                        -->
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h4>Account info</h4>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" value="JohnDoe"/>
+                        <input type="text" class="form-control" id="username" value="@Model.Partner.Account.Username" />
                     </div>
                     <div class="mb-3">
                         <label for="oldPassword" class="form-label">Old Password</label>
-                        <input type="password" class="form-control" id="oldPassword"/>
+                        <input type="password" class="form-control" id="oldPassword" value="@Model.Partner.Account.Password" />
                     </div>
                     <div class="mb-3">
                         <label for="newPassword" class="form-label">New Password</label>
