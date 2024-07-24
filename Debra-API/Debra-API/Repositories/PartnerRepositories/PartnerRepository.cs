@@ -61,13 +61,13 @@ namespace Debra_API.Repositories.PartnerRepositories
                 return false;
             }
 
-            Partner newPartner = new Partner(
-                partner.Id,
-                partner.Name,
-                partner.RegisteredDate,
-                partner.Type,
-                partner.Email               
-                );
+            Partner newPartner = new Partner();
+
+            newPartner.Id = partner.Id;
+            newPartner.Name = partner.Name;
+            newPartner.RegisteredDate = partner.RegisteredDate;
+            newPartner.Type = partner.Type;
+            newPartner.Email = partner.Email;
 
             return Save();
         }

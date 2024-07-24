@@ -6,6 +6,8 @@ namespace Debra_API.Repositories.EventRepositories
     {
         Event? Add(Event newEvent);
         List<Event> GetAll();
-		Event? GetById(int Id);
-	}
+        List<Event> GetUpcomingEvents();
+        Event? GetById(int Id);
+        List<dynamic> GetUpcomingEventTitles();
+    }
 }

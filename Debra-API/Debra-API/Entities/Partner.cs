@@ -6,19 +6,6 @@ namespace Debra_API.Entities
 {
     public class Partner
     {
-        public Partner()
-        {
-        }
-
-        public Partner(int id, string name, DateTime registeredDate, string type, string email)
-        {
-            Id = id;
-            Name = name;
-            RegisteredDate = registeredDate;
-            Type = type;
-            Email = email;
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -33,7 +20,5 @@ namespace Debra_API.Entities
         public PartnerAccount Account { get; set; } = null!;
         [JsonIgnore]
         public ICollection<Event> Events { get; } = [];
-
-
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.Extensions.Hosting;
 using System.Text.Json.Serialization;
 
 namespace Debra_API.Entities
@@ -16,7 +15,5 @@ namespace Debra_API.Entities
         public decimal CommisionPerTicket { get; set; }
         [JsonIgnore]
         public ICollection<Ticket> Tickets { get; } = [];
-
-
     }
 }

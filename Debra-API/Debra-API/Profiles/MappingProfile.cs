@@ -23,37 +23,36 @@ namespace Debra_API.Profiles
             CreateMap<PartnerAccount, PartnerAccountDTO>();
             CreateMap<PartnerAccountDTO, PartnerAccount>();
 
-			/*CreateMap<TicketDetailsCreateDTO, TicketDetails>();
-            CreateMap<TicketDetails, TicketDetailsCreateDTO>();*/
-
-
 			CreateMap<TicketDetails, EventTicketCreateDTO>();
 			CreateMap<EventTicketCreateDTO, TicketDetails>();
 
-			CreateMap<BandDTO, Band>();
-			CreateMap<Band, BandDTO>();
+            CreateMap<BandDTO, Band>()
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => !string.IsNullOrEmpty(src.Image) ? Convert.FromBase64String(src.Image) : null));
 
-			CreateMap<MusicianDTO, Musician>();
-			CreateMap<Musician, MusicianDTO>();
+            CreateMap<Band, BandDTO>()
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Image != null ? Convert.ToBase64String(src.Image) : null));
+
+            CreateMap<MusicianDTO, Musician>()
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => !string.IsNullOrEmpty(src.Image) ? Convert.FromBase64String(src.Image) : null));
+
+            CreateMap<Musician, MusicianDTO>()
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Image != null ? Convert.ToBase64String(src.Image) : null));
 
             CreateMap<Ticket, TicketCreateDTO>();
 			CreateMap<TicketCreateDTO, Ticket>();
 
 			CreateMap<Event, EventCreateDTO>()
-				.ForMember(dest => dest.ImageBase64, opt => opt.Ignore())
-				.ForPath(dest => dest.PartnerId, opt => opt.MapFrom(src => src.Partner.Id))
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Image != null ? Convert.ToBase64String(src.Image) : null))
+                .ForPath(dest => dest.PartnerId, opt => opt.MapFrom(src => src.Partner.Id))
 				.ForMember(dest => dest.Tickets, opt => opt.Ignore());
 
 			CreateMap<EventCreateDTO, Event>()
-				.ForMember(dest => dest.Image, opt => opt.Ignore())
-				//.ForPath(dest => dest.Partner.Id, opt => opt.MapFrom(src => src.PartnerId))
-				.ForMember(dest => dest.Tickets, opt => opt.Ignore())
+                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => !string.IsNullOrEmpty(src.Image) ? Convert.FromBase64String(src.Image) : null))
+                .ForMember(dest => dest.Tickets, opt => opt.Ignore())
 				.ForMember(dest => dest.Musicians, opt => opt.Ignore())
 				.ForMember(dest => dest.Bands, opt => opt.Ignore());
 
-            CreateMap<Event, EventReadDTO>()
-                .ForMember(dest => dest.ImageBase64, opt => opt.Ignore());
-				//.ForPath(dest => dest.Partner.Id, opt => opt.MapFrom(src => src.Partner.Id))
+            CreateMap<Event, EventReadDTO>();
 
 			/*CreateMap<Event, EventCreateDTO>()
                 .ForMember(dest => dest.ImageBase64, opt => opt.MapFrom(src => Convert.ToBase64String(src.Image)))

@@ -5,7 +5,7 @@
 }
 
 <div class="event-details">
-	<div class="row text-center">
+	<!--<div class="row text-center">
 		<div class="col">
 			<span class="text-white"><b>Event Details</b></span>
 		</div>
@@ -15,7 +15,7 @@
 		<div class="col">
 			<span class="text-white-50"><b>Summary</b></span>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="container m-5 mt-3">
         <div class="row text-start">
@@ -39,7 +39,7 @@
                 <div class="form-group row mb-3">
                     <label class="form-label text-white col-3">Date</label>
                     <div class="col-9">
-                        <input type="date" asp-for="newEvent.Date" class="form-control" required>
+                        <input type="date" asp-for="newEvent.Date" class="form-control" min="@Model.MinDate" required>
                     </div>
                 </div>
                 <div class="form-group row mb-3">
@@ -61,7 +61,7 @@
                 <div class="form-group row mb-3">
                     <label class="form-label text-white col-3">Image</label>
                     <div class="col-9">
-                        <input asp-for="EventImage" class="form-control"
+                        <input  class="form-control"
                                type="file" id="formFile" accept="image/*" required>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="form-group row mb-3">
-                    <div class="col-6">
+                    <div class="col-12">
                         <h4 class="add-event-heading">Add a Musician</h4>
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Name</label>
@@ -82,15 +82,15 @@
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Image</label>
                             <div class="col-9">
-                                <input class="form-control" type="file" id="formFile" accept="image/*" asp-for="MusicianImage" required>
+                                <input class="form-control" type="file" id="formFile" accept="image/*"  required>
                             </div>
                         </div>
-                        <div class="row justify-content-end mb-3">
+                        <!--<div class="row justify-content-end mb-3">
 							<button class="btn btn-next col-3 mx-2">Add</button>
-                        </div>
+						</div>-->
                     </div>
 
-                    <div class="col-6">
+                    <!--<div class="col-6">
                         <h4 class="add-event-heading">Added Musician/s</h4>
                         <table class="table table-hover table-dark">
                             <thead>
@@ -103,7 +103,7 @@
                                 
                             </tbody>
                         </table>
-                    </div>
+					</div>-->
                 </div>
 
                 <div class="col-12">
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="form-group row mb-3">
-                    <div class="col-6">
+                    <div class="col-12">
                         <h4 class="add-event-heading">Add a Band</h4>
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Name</label>
@@ -123,15 +123,15 @@
                         <div class="form-group row mb-3">
                             <label class="form-label text-white col-3">Image</label>
                             <div class="col-9">
-                                <input asp-for="BandImage" class="form-control"
+                                <input class="form-control"
                                        type="file" id="formFile" accept="image/*" required>
                             </div>
                         </div>
-                        <div class="row justify-content-end mb-3">
+                        <!--<div class="row justify-content-end mb-3">
                             <button class="btn btn-next col-3 mx-2">Add</button>
-                        </div>
+						</div>-->
                     </div>
-
+                    <!--
                     <div class="col-6">
                         <h4 class="add-event-heading">Added Band/s</h4>
                         <table class="table table-hover table-dark">
@@ -146,7 +146,7 @@
                                 
                             </tbody>
                         </table>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="col-12">
@@ -164,22 +164,23 @@
                     <tbody>
                         <tr>
                             <th scope="row">
-                                <input type="number" asp-for="newEvent.Tickets.Quantity" class="form-control" min="0" value="0" step="1" required>
+                                <input type="number" asp-for="newEvent.Tickets.Quantity" class="form-control" min="0"  step="1" required>
                             </th>
                             <th scope="row">
-                                <input type="number" asp-for="newEvent.Tickets.UnitPrice" class="form-control" min="0" value="0" step=".01" required>
+                                <input type="number" asp-for="newEvent.Tickets.UnitPrice" class="form-control" min="0"  step=".01" required>
                             </th>
                             <th scope="row">
-                                <input type="number" asp-for="newEvent.Tickets.CommisionPerTicket" class="form-control" min="0" value="0" step=".01" required>
+                                <input type="number" asp-for="newEvent.Tickets.CommisionPerTicket" class="form-control" min="0"  step=".01" required>
                             </th>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="d-flex justify-content-center">
-					<button type="button" class="btn btn-cancel px-5 mx-5 rounded-pill">Cancel</button>
-                    <input type="submit" name="btnAdd" value="Next" class="btn btn-next px-5 
-                        mx-5 rounded-pill effect effect-1" asp-page-handler="Create" />
+                    <input type="submit" name="btnCancel" value="Cancel" asp-page-handler="Cancel"
+                        class="btn btn-cancel px-5 mx-5 rounded-pill"/>
+                    <input type="submit" name="btnAdd" value="Add" asp-page-handler="Create"
+                        class="btn btn-next px-5 mx-5 rounded-pill effect effect-1"/>
                 </div>
             </form>
         </div>

@@ -185,7 +185,60 @@ namespace Debra_API.Controllers
 			return Ok(results);
 		}
 
-		[HttpGet("ById")]
+        [HttpGet("Upcoming")]
+        public ActionResult<IEnumerable<EventReadDTO>> GetUpcomingEvents()
+        {
+            List<Event> allEvents = _eventRepository.GetUpcomingEvents();
+
+            List<EventReadDTO> results = new List<EventReadDTO>();
+
+            foreach (Event item in allEvents)
+            {
+                Partner? partner = _partnerRepository.GetById(item.PartnerId);
+
+                if (partner == null)
+                {
+                    return Ok("Invalid Partner");
+                }
+
+                item.Partner = partner;
+
+                EventReadDTO eventReadDTO = _mapper.Map<EventReadDTO>(item);
+
+                List<Musician> musicians = _musicianRepository.GetByEvent(item.Id);
+                List<MusicianDTO> musicianDTOs = [];
+
+                foreach (var musician in musicians)
+                {
+                    musicianDTOs.Add(_mapper.Map<MusicianDTO>(musician));
+                }
+
+                List<Band> bands = _bandRepository.GetByEvent(item.Id);
+                List<BandDTO> bandDTOs = [];
+
+                foreach (var band in bands)
+                {
+                    bandDTOs.Add(_mapper.Map<BandDTO>(band));
+                }
+
+
+                eventReadDTO.Musicians = musicianDTOs;
+                eventReadDTO.Bands = bandDTOs;
+                results.Add(eventReadDTO);
+
+            }
+
+            return Ok(results);
+        }
+
+        [HttpGet("Titles")]
+        public ActionResult<IEnumerable<string>> GetUpcomingEventTitles()
+        {
+            List<dynamic> titles = _eventRepository.GetUpcomingEventTitles();
+			return Ok(titles);
+        }
+
+        [HttpGet("ById")]
 		public ActionResult GetById([FromQuery] int Id)
 		{
 			Event foundEvent = _eventRepository.GetById(Id);

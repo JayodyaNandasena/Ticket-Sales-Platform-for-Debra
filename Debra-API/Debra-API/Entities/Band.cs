@@ -9,15 +9,12 @@ namespace Debra_API.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         [Required]
         public string Name { get; set; } = null!;
-
         public byte[]? Image { get; set; } = [];
-		//[JsonIgnore]
 		public int EventId { get; set; }
-
-		[Required]
+        [JsonIgnore]
+        [Required]
 		public required Event Event { get; set; }
 	}
 }

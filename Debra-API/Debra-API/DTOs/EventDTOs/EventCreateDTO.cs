@@ -11,7 +11,7 @@ namespace Debra_API.DTOs.EventDTOs
         public TimeOnly StartTime { get; set; }
         public TimeOnly EndTime { get; set; }
         public string Location { get; set; } = null!;
-        public string ImageBase64 { get; set; } = null!;
+        public string Image { get; set; } = null!;
         public int PartnerId { get; set; }
         public EventTicketCreateDTO? Tickets { get; set; }
         public List<MusicianDTO> Musicians { get; set; } = [];

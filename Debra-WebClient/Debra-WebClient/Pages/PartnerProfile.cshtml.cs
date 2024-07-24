@@ -28,8 +28,14 @@ namespace Debra_WebClient.Pages
 
         public async Task<IActionResult> OnGet()
         {
-            PartnerId = _httpContextAccessor.HttpContext.Session.GetInt32("PartnerId") ?? 0;
+            int? partnerId = _httpContextAccessor.HttpContext.Session.GetInt32("PartnerId");
 
+            if (partnerId == null)
+            {
+                return RedirectToPage("SignIn");
+            }
+
+            PartnerId = partnerId.Value;
             string url = "https://localhost:7102/Partner/ById?id="+PartnerId;
             using (HttpClient client = new HttpClient())
             {

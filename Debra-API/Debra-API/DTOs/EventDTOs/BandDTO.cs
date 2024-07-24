@@ -3,6 +3,6 @@
     public class BandDTO
     {
         public string Name { get; set; } = null!;
-        public string ImageBase64 { get; set; } = null!;
+        public string Image { get; set; } = null!;
     }
 }

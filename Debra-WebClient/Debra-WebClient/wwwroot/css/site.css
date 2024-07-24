@@ -102,14 +102,14 @@ footer {
 
 /*CSS for View Event page*/
 .cover-container {
-    background-image: url('../img/event-2.jpg');
+    background-image: url('../img/event.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Ensures the background image stays fixed while scrolling */
-    color: #fff; /* Text color on top of the background image */
+    background-attachment: fixed; 
+    color: #fff; 
     text-align: center;
-    padding: 50px; /* Adjust padding as needed */
-    height: 100vh; /* Set height to full viewport height */
+    padding: 50px; 
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;

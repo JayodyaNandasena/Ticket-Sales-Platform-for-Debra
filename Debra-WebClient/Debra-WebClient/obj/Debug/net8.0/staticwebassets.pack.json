@@ -17,12 +17,24 @@
       "PackagePath": "staticwebassets\\img\\background.png"
     },
     {
+      "Id": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\band.png",
+      "PackagePath": "staticwebassets\\img\\band.png"
+    },
+    {
       "Id": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\concert-image.png",
       "PackagePath": "staticwebassets\\img\\concert-image.png"
     },
     {
       "Id": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\event-2.jpg",
       "PackagePath": "staticwebassets\\img\\event-2.jpg"
+    },
+    {
+      "Id": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\event.jpg",
+      "PackagePath": "staticwebassets\\img\\event.jpg"
+    },
+    {
+      "Id": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\singer2.png",
+      "PackagePath": "staticwebassets\\img\\singer2.png"
     },
     {
       "Id": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\js\\site.js",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Debra_API.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20240702094513_EventsUpdate")]
-    partial class EventsUpdate
+    [Migration("20240711114625_updateTickets")]
+    partial class updateTickets
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,6 @@ namespace Debra_API.Migrations
                         .HasColumnType("int");
 
                     b.Property<byte[]>("Image")
-                        .IsRequired()
                         .HasColumnType("VarBinary(max)");
 
                     b.Property<string>("Name")
@@ -144,7 +143,6 @@ namespace Debra_API.Migrations
                         .HasColumnType("int");
 
                     b.Property<byte[]>("Image")
-                        .IsRequired()
                         .HasColumnType("VarBinary(max)");
 
                     b.Property<string>("Name")

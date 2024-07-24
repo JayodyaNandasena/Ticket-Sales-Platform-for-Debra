@@ -1,5 +1,7 @@
 ﻿using Debra_API.Data;
 using Debra_API.Entities;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace Debra_API.Repositories.EventRepositories
 {
@@ -31,12 +33,45 @@ namespace Debra_API.Repositories.EventRepositories
 
 		public List<Event> GetAll()
 		{
-			return _dbContext.Events.ToList();
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+
+            return _dbContext.Events
+                .Where(e => e.Date > today)
+                .OrderBy(e => e.Date)
+                .ToList();
 		}
 
-		public Event? GetById(int Id)
+        public List<Event> GetUpcomingEvents()
+        {
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+
+            return _dbContext.Events
+                .Where(e => e.Date > today)
+                .OrderBy(e => e.Date)
+                .Take(3)
+                .ToList();
+        }
+
+        public List<dynamic> GetUpcomingEventTitles()
+        {
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+
+            return _dbContext.Events
+                .Where(e => e.Date > today)
+                .OrderBy(e => e.Date)
+                .Select(e => new
+                {
+                    Id = e.Id,
+                    Title = e.Title
+                })
+                .ToList<dynamic>();
+        }
+
+
+
+        public Event? GetById(int Id)
 		{
-			return _dbContext.Events.FirstOrDefault(e => e.Id == Id);
+            return _dbContext.Events.FirstOrDefault(e => e.Id == Id);
 		}
 
 		private bool Save()

@@ -3,15 +3,13 @@ namespace Debra_WebClient.Model
 {
     public class Bands
     {
-        public Bands(string bandName, Task<string> task)
+        public Bands(string name, string image)
         {
-            BandName = bandName;
-            Task = task;
+            Name = name;
+            Image = image;
         }
 
         public string Name { get; set; } = null!;
-        public string ImageBase64 { get; set; } = null!;
-        public string BandName { get; }
-        public Task<string> Task { get; }
+        public string Image { get; set; } = null!;
     }
 }

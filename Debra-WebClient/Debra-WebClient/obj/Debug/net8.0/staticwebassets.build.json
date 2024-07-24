@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uSqYMtinKJWt93oFZ7c2nsxn8Cheet/aKaKjFfIRzPM=",
+  "Hash": "HaIR3IBW9vsQl/tLLfFpKHIlJXF13jxRkXiePPfC/G0=",
   "Source": "Debra-WebClient",
   "BasePath": "_content/Debra-WebClient",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\img\\background.png"
     },
     {
+      "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\band.png",
+      "SourceId": "Debra-WebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\",
+      "BasePath": "_content/Debra-WebClient",
+      "RelativePath": "img/band.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\band.png"
+    },
+    {
       "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\concert-image.png",
       "SourceId": "Debra-WebClient",
       "SourceType": "Discovered",
@@ -131,6 +150,25 @@
       "OriginalItemSpec": "wwwroot\\img\\concert-image.png"
     },
     {
+      "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\event.jpg",
+      "SourceId": "Debra-WebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\",
+      "BasePath": "_content/Debra-WebClient",
+      "RelativePath": "img/event.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\event.jpg"
+    },
+    {
       "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\event-2.jpg",
       "SourceId": "Debra-WebClient",
       "SourceType": "Discovered",
@@ -148,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\event-2.jpg"
+    },
+    {
+      "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\img\\singer2.png",
+      "SourceId": "Debra-WebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\",
+      "BasePath": "_content/Debra-WebClient",
+      "RelativePath": "img/singer2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\singer2.png"
     },
     {
       "Identity": "E:\\Projects\\.NET\\Debra-SOC_assignment\\Debra-WebClient\\Debra-WebClient\\wwwroot\\js\\site.js",

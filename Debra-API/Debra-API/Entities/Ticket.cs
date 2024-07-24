@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Debra_API.Entities
 {
@@ -17,6 +16,7 @@ namespace Debra_API.Entities
         public int DetailsId {  get; set; }
 		[Required]
         public TicketDetails TicketDetails { get; set; } = null!; // Required foreign key property
+        public int? CustomerId { get; set; }
         public Customer? Customer { get; set; } = null!; // Optional foreign key property
     }
 }

@@ -1,13 +1,10 @@
 ﻿using Debra_API.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System.Reflection.Metadata;
 
 namespace Debra_API.Data
 {
     public class AppDBContext : DbContext
     {
-        //no need to do as public AppDBContext(DbContextOptions<AppDBContext> options) : base(options) because only one DBContext is available for this project
         public AppDBContext(DbContextOptions options) : base(options)
         {
         }
@@ -31,41 +28,41 @@ namespace Debra_API.Data
 			modelBuilder.Entity<Band>().Property(p => p.Image).HasColumnType("VarBinary(max)");
 
 
-			//one-to-many Relationships (with shadow foreign keys)
+			//one-to-many Relationships
 			modelBuilder.Entity<Partner>()
                 .HasMany(e => e.Events)
                 .WithOne(e => e.Partner)
-                .HasForeignKey("PartnerId")
+                .HasForeignKey(e => e.PartnerId)
                 .IsRequired();
 
             modelBuilder.Entity<Event>()
                 .HasMany(e => e.Tickets)
                 .WithOne(e => e.Event)
-                .HasForeignKey("EventId")
+                .HasForeignKey(e => e.EventId)
                 .IsRequired();
 
             modelBuilder.Entity<TicketDetails>()
                 .HasMany(e => e.Tickets)
                 .WithOne(e => e.TicketDetails)
-                .HasForeignKey("DetailsId")
+                .HasForeignKey(e => e.DetailsId)
                 .IsRequired();
 
             modelBuilder.Entity<Customer>()
                 .HasMany(e => e.Tickets)
                 .WithOne(e => e.Customer)
-                .HasForeignKey("CustomerId")
+                .HasForeignKey(e => e.CustomerId)
                 .IsRequired(false);
 
             modelBuilder.Entity<Event>()
                 .HasMany(e => e.Musicians)
                 .WithOne(e => e.Event)
-				.HasForeignKey("EventId")
+				.HasForeignKey(e => e.EventId)
 				.IsRequired();
 
 			modelBuilder.Entity<Event>()
                 .HasMany(e => e.Bands)
                 .WithOne(e => e.Event)
-				.HasForeignKey("EventId")
+				.HasForeignKey(e => e.EventId)
 				.IsRequired();
 
 

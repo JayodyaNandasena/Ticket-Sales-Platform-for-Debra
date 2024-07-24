@@ -80,7 +80,7 @@ namespace Debra_API.Migrations
                     StartTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     EndTime = table.Column<TimeOnly>(type: "time", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: true),
                     PartnerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -120,7 +120,7 @@ namespace Debra_API.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: true),
                     EventId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -141,7 +141,7 @@ namespace Debra_API.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: false),
+                    Image = table.Column<byte[]>(type: "VarBinary(max)", nullable: true),
                     EventId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -163,7 +163,7 @@ namespace Debra_API.Migrations
                     IsSold = table.Column<bool>(type: "bit", nullable: false),
                     EventId = table.Column<int>(type: "int", nullable: false),
                     DetailsId = table.Column<int>(type: "int", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: true)
+                    CustomerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

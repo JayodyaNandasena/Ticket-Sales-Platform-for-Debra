@@ -42,16 +42,16 @@ namespace Debra_WebClient.Pages
                     {
                         Partners loggedPartner = reply.Result;
                         HttpContext.Session.SetInt32("PartnerId", loggedPartner.Id);
-                        return RedirectToPage("Index");
+						TempData["successMessage"] = "Sign in Success!";
+						return RedirectToPage("Index");
                     }
                 }
             }
-            // Display error toast message using Bootstrap
+            // Display error toast message
             TempData["ErrorMessage"] = "Invalid credentials or server error.";
 
-            // Redirect to login page or handle as needed
+            // Redirect to login page 
             return RedirectToPage("SignIn");
-            //throw new Exception($"Failed to sign In");
 
         }
     }

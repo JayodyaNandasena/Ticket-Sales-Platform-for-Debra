@@ -1,57 +1,62 @@
 ﻿@page
 @model Debra_WebClient.Pages.ViewEventModel
 @{
+    var eventDate = Model._event.Date.ToDateTime(TimeOnly.MinValue); // Convert DateOnly to DateTime
+    var formattedDate = eventDate.ToString("dddd, MMMM d'th', yyyy"); // Format date
+    var startTime = Model._event.StartTime.ToString("h:mm tt"); // Format time
 }
 
 <div class="container-fluid text-light p-0">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-		<h1>Cover your page.</h1>
-		<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-		<p class="lead">
-			<a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">View Details</a>
-            <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Buy Tickets</a>
-		</p>
+    <!-- Hero Section -->
+    <div class="cover-container d-flex w-100 h-100 p-5 mx-auto flex-column text-center">
+        <h1 class="display-4 mt-5">@Model._event.Title</h1>
+        <p class="lead">@Model._event.Description</p>
+        <p class="lead mt-4">
+            <a href="#" class="btn btn-lg btn-light fw-bold border-dark bg-light">Buy Tickets</a>
+        </p>
     </div>
-	
-    
 
-
+    <!-- Performers Section -->
     <div class="container my-5">
         <h2 class="text-center mb-4">The Rocking Performers</h2>
         <div class="row text-center">
-            <div class="col-md-3 mb-4">
-                <img src="path/to/nova-ray.jpg" alt="Nova Ray" class="img-fluid rounded-circle mb-2">
-                <h5>Nova Ray</h5>
-            </div>
-            <div class="col-md-3 mb-4">
-                <img src="path/to/kai-atlas.jpg" alt="Kai Atlas" class="img-fluid rounded-circle mb-2">
-                <h5>Kai Atlas</h5>
-            </div>
-            <div class="col-md-3 mb-4">
-                <img src="path/to/willow-song.jpg" alt="Willow Song" class="img-fluid rounded-circle mb-2">
-                <h5>Willow Song</h5>
-            </div>
-            <div class="col-md-3 mb-4">
-                <img src="path/to/echo-chamber.jpg" alt="Echo Chamber" class="img-fluid rounded-circle mb-2">
-                <h5>Echo Chamber</h5>
-            </div>
+            @if (Model._event.Musicians.Any())
+            {
+                @foreach (var musician in Model._event.Musicians)
+                {
+                    <div class="col-md-3 mb-4">
+                        <img src="~/img/singer2.png" alt="@musician.Name" class="img-fluid mb-2" style="max-width: 150px; height: 200px;">
+                        <h5>@musician.Name</h5>
+                    </div>
+                }
+            }
+            @if (Model._event.Bands.Any())
+            {
+                @foreach (var band in Model._event.Bands)
+                {
+                    <div class="col-md-3 mb-4">
+                        <img src="~/img/band.png" alt="@band.Name" class="img-fluid mb-2" style="max-width: 500px; height: 200px;">
+                        <h5>@band.Name</h5>
+                    </div>
+                }
+            }
         </div>
     </div>
 
+    <!-- About Event Section -->
     <div class="container my-5">
         <h2 class="text-center mb-4">About Event</h2>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet vehicula sapien. Donec consectetur vehicula augue, at ullamcorper dui ullamcorper mattis. Aliquam volutpat ornare suscipit. Nam ac consequat tortor. Duis sed suscipit erat. Etiam massa eros, varius ac tempor sed, pulvinar nec tortor. Pellentesque lectus dolor, facilisis eu finibus a, facilisis nec erat.</p>
+        <p class="text-center">@Model._event.Description</p>
     </div>
 
+    <!-- Event Details Section -->
     <div class="container my-5 text-center">
-        <h2 class="text-center mb-4">Mark Your Calendar</h2>
-        <p>Wednesday, September 18th, 2024 at 8:00 PM (GMT+5:30)</p>
-        <p>Colombo Ground, Colombo</p>
-        <a href="#" class="btn btn-primary my-3">Buy Tickets</a>
+        <p>@formattedDate at @startTime (GMT+5:30)</p>
+        <p>Contact the Organizer via <a href="mailto:@Model._event.Partner.Email" class="text-light">@Model._event.Partner.Email</a></p>
+        <p class="lead mt-4">
+            <a href="#" class="btn btn-lg btn-light fw-bold border-dark bg-light">Buy Tickets</a>
+        </p>
     </div>
 
-    <div class="text-center py-3">
-        <p>Contact the Organizer via <a href="mailto:organizer@gmail.com" class="text-light">organizer@gmail.com</a></p>
-    </div>
 </div>

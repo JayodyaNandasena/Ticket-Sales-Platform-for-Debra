@@ -25,7 +25,7 @@ namespace Debra_API.Controllers
         {
             var model = _mapper.Map<Customer>(customerDTO);
 
-            if (_customerRepository.Add(model))
+            if (_customerRepository.Add(model) != 0)
             {
 				var okResponse = new OperationResultResponseDTO<CustomerDTO>
 				{

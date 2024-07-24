@@ -1,0 +1,58 @@
+﻿@page
+@model Debra_WebClient.Pages.TicketsModel
+@{
+}
+
+<div class="container m-5 mt-3">
+    <div class="row text-start">
+        <form method="post">
+            <div class="col-12 mt-5">
+                <h2 class="mb-4 add-event-heading">Ticket Details</h2>
+            </div>
+
+            <div class="form-group row mb-3">
+                <label class="form-label text-white col-3">Select the Event</label>
+                <select class="form-select col-9" asp-for="details.EventId" asp-items="@(new SelectList(Model.eventDetails, "Id", "Title"))">
+                </select>
+            </div>
+
+            <div class="form-group row mb-3">
+                <label class="form-label text-white col-3">No. of Tickets Needed</label>
+                <div class="col-9">
+                    <input type="number" asp-for="details.quantity" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <h2 class="mb-4 add-event-heading">Enter Your Details</h2>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label text-white col-3">Name</label>
+                <div class="col-9">
+                    <input type="text" asp-for="details.Customer.Name" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label text-white col-3">Email</label>
+                <div class="col-9">
+                    <input type="email" asp-for="details.Customer.Email" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label class="form-label text-white col-3">Mobile Number</label>
+                <div class="col-9">
+                    <input type="number" asp-for="details.Customer.Mobile" class="form-control" required>
+                </div>
+            </div>
+            
+            <div class="d-flex justify-content-center">
+                <input type="submit" name="btnCancel" value="Cancel" asp-page-handler="Cancel"
+                       class="btn btn-cancel px-5 mx-5 rounded-pill" />
+                <input type="submit" name="btnAdd" value="Add" asp-page-handler="Create"
+                       class="btn btn-next px-5 mx-5 rounded-pill effect effect-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

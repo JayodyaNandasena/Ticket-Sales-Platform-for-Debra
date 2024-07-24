@@ -11,15 +11,20 @@ namespace Debra_API.Repositories.CustomerRepositories
             _dbContext = dBContext;
         }
 
-        public bool Add(Customer customer)
+        public int Add(Customer customer)
         {
             if (customer == null)
             {
-                return false; 
+                return 0;
             }
 
             _dbContext.Customers.Add(customer);
-            return Save();
+            if (_dbContext.SaveChanges() > 0)
+            {
+                return customer.Id;
+            }
+
+            return 0;
         }
 
         public bool Delete(Customer customer)
